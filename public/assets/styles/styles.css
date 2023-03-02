@@ -1,0 +1,77 @@
+/* Variable colors : */
+
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap");
+:root {
+  --white: #fcfcfc;
+  --red: #c80000;
+  --primary-blue: #002653;
+  --second-blue: #002855;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+body {
+  margin: 0px;
+}
+
+/* NavBar Desktop*/
+nav {
+  background-color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 6px -6px #222;
+}
+
+nav .logo_nav {
+  width: 200px;
+  margin: 0.75rem;
+}
+
+nav .link_nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+nav .link_nav {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin-right: 2rem;
+}
+
+nav .link_nav ul li a i {
+  padding-right: 1rem;
+  fill: currentColor;
+}
+nav .link_nav ul li a {
+  border: 1px solid var(--primary-blue);
+  border-radius: 4px;
+  padding: 1rem;
+  text-decoration: none;
+  background-color: var(--primary-blue);
+  color: var(--white);
+}
+
+nav .link_nav ul li a:hover {
+  border: 1px solid var(--primary-blue);
+  border-radius: 4px;
+  padding: 1rem;
+  text-decoration: none;
+  background-color: var(--white);
+  color: var(--primary-blue);
+}
+
+@media only screen and (max-width: 1024px) {
+}
+
+@media only screen and (max-width: 768px) {
+  nav .link_nav ul li a span {
+    display: none;
+  }
+  nav .link_nav ul li a i {
+    padding-right: 0rem;
+    fill: currentColor;
+  }
+}
