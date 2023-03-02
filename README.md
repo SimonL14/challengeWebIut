@@ -47,7 +47,7 @@ yarn build
 
 N'oubliez pas de modifier le ".env" pour l'adapter à votre base de donnée.
 ```sh
-DATABASE_URL="mysql://User:Password@127.0.0.1:3306/u546677444_projetsymfony?serverVersion=5.7"
+DATABASE_URL="mysql://User:Password@127.0.0.1:3306/challengewebiut?serverVersion=8&charset=utf8mb4"
 ```
 
 Vous devez créer une base de donnée en local avec le nom : ' challengewebiut '
