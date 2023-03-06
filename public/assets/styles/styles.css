@@ -62,107 +62,6 @@ nav .link_nav ul li a:hover {
   color: var(--primary-blue);
 }
 
-/* Login Desktop */
-
-input[type="email"],
-input[type="text"],
-select {
-  width: 380px;
-  padding: 12px 20px;
-  margin: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-
-input[type="password"],
-select {
-  width: 380px;
-  padding: 12px 20px;
-  margin: 8px;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-
-.boxlogin {
-  background-color: #002653;
-  border-radius: 0.5rem;
-  margin: 8px;
-  text-align: center;
-  max-width: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 2rem;
-}
-
-.h1login {
-  color: var(--white);
-  text-align: center;
-  width: fit-content;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* A CHANGER EN IMPUT TYPE SUBMIT */
-.boxlogin a {
-  border-radius: 4px;
-  width: fit-content;
-  padding: 0.5rem;
-  height: 20px;
-  background-color: var(--red);
-  color: var(--white);
-  font-family: "Nunito Sans", sans-serif;
-  margin: 2rem;
-  cursor: pointer;
-}
-.boxlogin a:hover {
-  background-color: var(--white);
-  color: var(--red);
-}
-
-/*Register Desktop*/
-.boxlogin button {
-  border: 0;
-  text-decoration: none;
-  color: var(--white);
-  background-color: var(--red);
-  padding: 1rem;
-  width: fit-content;
-  border-radius: 10px;
-  justify-content: flex-end;
-  font-family: "Nunito Sans", sans-serif;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 2rem;
-}
-.boxlogin button:hover {
-  text-decoration: none;
-  background-color: var(--primary-blue);
-  border: 1px solid var(--white);
-  color: var(--white);
-  padding: 1rem;
-  width: fit-content;
-  border-radius: 10px;
-  justify-content: flex-end;
-  font-family: "Nunito Sans", sans-serif;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.h1agree {
-  color: var(--white);
-  text-align: center;
-  width: fit-content;
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
-}
-
 /* HeroBox */
 
 .hero_box {
@@ -282,29 +181,6 @@ select {
   color: var(--white);
 }
 
-.boxlogin button:hover {
-  text-decoration: none;
-  background-color: var(--primary-blue);
-  border: 1px solid var(--white);
-  color: var(--white);
-  padding: 1rem;
-  width: fit-content;
-  border-radius: 10px;
-  justify-content: flex-end;
-  font-family: "Nunito Sans", sans-serif;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.h1agree {
-  color: var(--white);
-  text-align: center;
-  width: fit-content;
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
-}
-
 /* MENTION LEGALE */
 
 .mention {
@@ -328,12 +204,6 @@ select {
     display: block;
     margin: 0 auto;
     margin-bottom: 5rem;
-  }
-
-  /* MENTION LEGALE */
-
-  .mention {
-    margin: 0 2rem;
   }
 }
 
