@@ -16,13 +16,13 @@
 	
 	<body>
 		<!-- Navbar -->
-		<nav class="" >
+		<nav>
 			<img src="{{ asset('assets/img/logo_iut.png') }}" alt="logo des iut" class="logo_nav">
 			<div class="link_nav">
-				<ul >
+				<ul>
 					{% if app.user %}
 						<li >
-							<p>[Nom utilisateur]</p>
+							<p>Bienvenue {{app.user.firstname}} !</p>
 						</li>
 						<li>
 							<a href="{{ path('app_logout') }}"><i class="fa-solid fa-user-minus"></i><span> Déconnexion</span></a>

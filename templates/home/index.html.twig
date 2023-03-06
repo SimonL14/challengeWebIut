@@ -1,9 +1,59 @@
 {% extends 'base.html.twig' %}
 
-{# {% block title %}Hello HomeController!{% endblock %} #}
+{% block title %}Accueil{% endblock %}
 
 {% block body %}
-<style>
+    <div class="hero_box">
+        <div class"hero_box_right">
+            <h1 class="h1_hero">LES INSTITUTS UNIVERSITAIRES DE TECHNOLOGIE</h1>
+            <h2 class="h2_hero">Les événements</h2>
+            <div class="next_event_container">
+                <h2>Prochain évenement dans :</h2>
+                <div class="next_event_time_container">
+                    <div class="next_event_time">
+                        <p>10</p>
+                        <p>Jours</p>
+                    </div>
+                    
+                    <div class="next_event_time">
+                        <p>10</p>
+                        <p>Heures</p>
+                    </div>
+
+                    <div class="next_event_time">
+                        <p>10</p>
+                        <p>Minutes</p>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </div>
+    <div class="btn_hero_container">
+        <a href="#Events" class="btn_see_Event"> Voir les évenements</a>
+    </div>
+
+
+    <div id="Events" class="events">
+        <h2>Les évenements</h2>
+        <div class="card_container">
+            <img src="{{ asset('assets/img/2-IUT Calais_02-10-14_0457-scaled.jpg') }}" alt="">
+            <div class="card_info">
+                <h2>[Nom Evenement]</h2>
+                <div class="date_lieu_card">
+                    <h3>[Date]</h3>
+                    <h3>[Lieu]</h3>
+                </div>
+                <div class="card_info_btn">
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse aliquam ad expedita et voluptas, sapiente voluptates pariatur labore, repellat, odio eligendi nihil aut earum suscipit voluptatibus eum sunt laudantium nisi.</p>
+                <a href="#">En savoir plus <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+
+{# <style>
     .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
@@ -12,10 +62,10 @@
     <h1>Hello {{ controller_name }}! ✅</h1>
     {# <p>Connecté en tant que : {{app.user.Firstname}}</p> #}
 
-    This friendly message is coming from:
+    {# This friendly message is coming from:
     <ul>
         <li>Your controller at <code><a href="{{ 'C:/laragon/www/challengeWebIut/src/Controller/HomeController.php'|file_link(0) }}">src/Controller/HomeController.php</a></code></li>
         <li>Your template at <code><a href="{{ 'C:/laragon/www/challengeWebIut/templates/home/index.html.twig'|file_link(0) }}">templates/home/index.html.twig</a></code></li>
     </ul>
-</div>
+</div> #} 
 {% endblock %}
