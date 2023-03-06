@@ -21,14 +21,13 @@
         {{ form_widget(registrationForm.plainPassword, {
             label: 'Password' 
         }) }}
-        <br>
         <div class="h1agree">
         {{ form_widget(registrationForm.agreeTerms) }}<p>Agree Terms<p></div>
         
         
             
     
-        <br><button type="submit" class="btn">S'inscrire</button></br></br>
+        <button type="submit" class="btn">S'inscrire</button>
     {{ form_end(registrationForm) }}
     </div>
 {% endblock %}
