@@ -1,7 +1,11 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Register{% endblock %}
-
+{% block stylesheets %}
+			<link rel="stylesheet" href="{{ asset('assets/styles/styles.css') }}">
+			<link rel="stylesheet" href="{{ asset('assets/styles/stylesregister.css') }}">
+            <link rel="stylesheet" href="{{ asset('assets/styles/styleslogin.css') }}">
+{% endblock %}
 {% block body %}
     {% for flash_error in app.flashes('verify_email_error') %}
         <div class="alert alert-danger" role="alert">{{ flash_error }}</div>

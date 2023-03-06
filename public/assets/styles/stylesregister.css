@@ -1,0 +1,39 @@
+/*Register Desktop*/
+.boxlogin button {
+    text-decoration: none;
+    color: var(--primary-blue);
+    background-color: var(--white);
+    padding: 1rem;
+    width: fit-content;
+    border-radius: 10px;
+    justify-content: flex-end;
+    font-family: "Nunito Sans", sans-serif;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .boxlogin button:hover {
+    text-decoration: none;
+    background-color: var(--primary-blue);
+    border: 1px solid var(--white);
+    color: var(--white);
+    padding: 1rem;
+    width: fit-content;
+    border-radius: 10px;
+    justify-content: flex-end;
+    font-family: "Nunito Sans", sans-serif;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .h1agree {
+    color: var(--white);
+    text-align: center;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+   
+  }
+
+ 
