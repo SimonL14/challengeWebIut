@@ -3,6 +3,8 @@
 /.env.local
 /.env.local.php
 /.env.*.local
+/.env
+/.gitignore
 /config/secrets/prod/prod.decrypt.private.php
 /public/bundles/
 /var/
