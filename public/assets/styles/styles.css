@@ -62,7 +62,6 @@ nav .link_nav ul li a:hover {
   color: var(--primary-blue);
 }
 
-<<<<<<< HEAD
 /* Login Desktop */
 
 input[type=email], select {
@@ -119,7 +118,41 @@ input[type=password], select {
 
 /*Register Desktop*/
 .boxlogin button {
-=======
+  text-decoration: none;
+  color: var(--primary-blue);
+  background-color: var(--white);
+  padding: 1rem;
+  width: fit-content;
+  border-radius: 10px;
+  justify-content: flex-end;
+  font-family: "Nunito Sans", sans-serif;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.boxlogin button:hover {
+  text-decoration: none;
+  background-color: var(--primary-blue);
+  border: 1px solid var(--white);
+  color: var(--white);
+  padding: 1rem;
+  width: fit-content;
+  border-radius: 10px;
+  justify-content: flex-end;
+  font-family: "Nunito Sans", sans-serif;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.h1agree {
+  color: var(--white);
+  text-align: center;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+ 
+}
 /* HeroBox */
 
 .hero_box {
@@ -220,14 +253,13 @@ input[type=password], select {
 }
 
 .card_container a {
->>>>>>> c1a36a530b6d93a7f3a5817c701d32f34f5171b2
+
   text-decoration: none;
   color: var(--primary-blue);
   background-color: var(--white);
   padding: 1rem;
   width: fit-content;
   border-radius: 10px;
-<<<<<<< HEAD
   justify-content: flex-end;
   font-family: "Nunito Sans", sans-serif;
   margin-left: auto;
@@ -258,14 +290,6 @@ input[type=password], select {
  
 }
 
-=======
-}
-.card_container a:hover {
-  background-color: var(--primary-blue);
-  border: 1px solid var(--white);
-  color: var(--white);
-}
->>>>>>> c1a36a530b6d93a7f3a5817c701d32f34f5171b2
 @media only screen and (max-width: 1024px) {
   .next_event_container {
     display: block;
@@ -282,7 +306,6 @@ input[type=password], select {
     padding-right: 0rem;
     fill: currentColor;
   }
-<<<<<<< HEAD
   .boxlogin {
     max-width: 80%;
   }
@@ -304,13 +327,6 @@ input[type=password], select {
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-=======
-
-  .next_event_container {
-    display: block;
-    margin: 0 auto;
-    margin-bottom: 5rem;
->>>>>>> c1a36a530b6d93a7f3a5817c701d32f34f5171b2
   }
 }
 
