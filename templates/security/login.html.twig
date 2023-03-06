@@ -1,7 +1,8 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Log in!{% endblock %}
 
+{% block title %}Log in!{% endblock %}
+{% block head %}<meta name="viewport" content="width=device-width, initial-scale=1.0">{% endblock %}
 {% block body %}
 <form method="post">
     {% if error %}
@@ -14,15 +15,29 @@
         </div>
     {% endif %}
 
-    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-    <label for="inputEmail">Email</label>
-    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
-    <label for="inputPassword">Password</label>
-    <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+    
 
-    <input type="hidden" name="_csrf_token"
-           value="{{ csrf_token('authenticate') }}"
-    >
+    <div class ="boxlogin">
+    <h1 class="h1login">Connexion</h1>
+        <div>
+            <input type="email" value="{{ last_username }}"  placeholder="Email" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
+        </div>
+        <div>
+            <input type="password" name="password" id="inputPassword" placeholder="Mot de passe" class="form-control" autocomplete="current-password" required>
+        </div>
+        
+
+        <input type="hidden" name="_csrf_token"
+            value="{{ csrf_token('authenticate') }}"
+        >
+    <div>
+    </br>
+    </div>
+        <a class="btn btn-lg btn-primary" type="submit">
+         Se connecter
+        </a></br></br>
+    </div>
+    
 
     {#
         Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
@@ -35,8 +50,6 @@
         </div>
     #}
 
-    <button class="btn btn-lg btn-primary" type="submit">
-        Sign in
-    </button>
+    
 </form>
 {% endblock %}
