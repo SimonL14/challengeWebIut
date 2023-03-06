@@ -239,6 +239,7 @@ select {
   display: flex;
   color: var(--white);
   flex-direction: row;
+  margin-bottom: 2rem;
 }
 .card_container img {
   width: 300px;
@@ -303,11 +304,36 @@ select {
   margin-right: auto;
   display: flex;
 }
+
+/* MENTION LEGALE */
+
+.mention {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.mention h1 {
+  text-align: center;
+}
+
+.mention_section {
+  padding-top: 1rem;
+}
+
+.mention_section h2 {
+  padding-bottom: 0.8rem;
+}
+
 @media only screen and (max-width: 1024px) {
   .next_event_container {
     display: block;
     margin: 0 auto;
     margin-bottom: 5rem;
+  }
+
+  /* MENTION LEGALE */
+
+  .mention {
+    margin: 0 2rem;
   }
 }
 
