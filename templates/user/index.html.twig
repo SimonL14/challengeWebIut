@@ -12,6 +12,9 @@
                 <tr>
                     <th class="user_th">Utilisateur</th>
                     <th class="delete_th">Suppression</th>
+                    {% if is_granted('ROLE_ADMIN') == true %}
+                    <th>Admin</th>
+                    {% endif %}
                 </tr>
             </thead>
             <tbody>
@@ -21,6 +24,12 @@
                     <td>
                         {{ include('user/_delete_form.html.twig') }}
                     </td>
+                    {% if is_granted('ROLE_ADMIN') == true %}
+                <td>
+                    <a href="{{ path('app_user_show', {'id': user.id}) }}">show</a>
+                    <a href="{{ path('app_user_edit', {'id': user.id}) }}">edit</a>
+                </td>
+                {% endif %}
                 </tr>
             {% else %}
                 <tr>
