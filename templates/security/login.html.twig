@@ -3,6 +3,10 @@
 
 {% block title %}Log in!{% endblock %}
 {% block head %}<meta name="viewport" content="width=device-width, initial-scale=1.0">{% endblock %}
+{% block stylesheets %}
+			<link rel="stylesheet" href="{{ asset('assets/styles/styles.css') }}">
+			<link rel="stylesheet" href="{{ asset('assets/styles/styleslogin.css') }}">
+{% endblock %}
 {% block body %}
 <form method="post">
     {% if error %}
@@ -31,7 +35,6 @@
             value="{{ csrf_token('authenticate') }}"
         >
     <div>
-    </br>
     </div>
         <input
          class="btn btn-lg btn-primary" type="submit">

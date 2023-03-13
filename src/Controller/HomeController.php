@@ -15,4 +15,12 @@ class HomeController extends AbstractController
             'controller_name' => 'HomeController',
         ]);
     }
+
+    #[Route('/mention', name: 'app_mention')]
+    public function mention(): Response
+    {
+        return $this->render('mention/mention.html.twig', [
+            'controller_name' => 'HomeController',
+        ]);
+    }
 }
