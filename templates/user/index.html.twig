@@ -8,32 +8,28 @@
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Email</th>
-                {# <th>Roles</th> #}
-                <th>Password</th>
                 <th>Firstname</th>
                 <th>Lastname</th>
-                <th>Telephone</th>
-                <th>IsVerified</th>
-                <th>actions</th>
+                <th>Supression</th>
+                {% if is_granted('ROLE_ADMIN') == true %}
+                <th>Admin</th>
+                {% endif %}
             </tr>
         </thead>
         <tbody>
         {% for user in users %}
             <tr>
-                <td>{{ user.id }}</td>
-                <td>{{ user.email }}</td>
-                {# <td>{{ user.roles ? user.roles|json_encode : '' }}</td> #}
-                <td>{{ user.password }}</td>
                 <td>{{ user.Firstname }}</td>
                 <td>{{ user.Lastname }}</td>
-                <td>{{ user.Telephone }}</td>
-                <td>{{ user.isVerified ? 'Yes' : 'No' }}</td>
+                <td>
+                    {{ include('user/_delete_form.html.twig') }}
+                </td>
+                {% if is_granted('ROLE_ADMIN') == true %}
                 <td>
                     <a href="{{ path('app_user_show', {'id': user.id}) }}">show</a>
                     <a href="{{ path('app_user_edit', {'id': user.id}) }}">edit</a>
                 </td>
+                {% endif %}
             </tr>
         {% else %}
             <tr>
@@ -43,5 +39,4 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_user_new') }}">Create new</a>
 {% endblock %}
