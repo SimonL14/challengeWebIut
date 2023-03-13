@@ -3,31 +3,34 @@
 {% block title %}User index{% endblock %}
 
 {% block body %}
-    <h1>User index</h1>
+    <div class="user_body">
+        <h1 class="titre">Gestion des utilisateurs</h1>
+        <input type="text" placeholder="Nom utilisateur"></input>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Firstname</th>
-                <th>Lastname</th>
-                <th>Supression</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for user in users %}
-            <tr>
-                <td>{{ user.Firstname }}</td>
-                <td>{{ user.Lastname }}</td>
-                <td>
-                    {{ include('user/_delete_form.html.twig') }}
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="9">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th class="user_th">Utilisateur</th>
+                    <th class="delete_th">Suppression</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for user in users %}
+                <tr class="user_row">
+                    <td class="user_name">{{ user.Firstname }} {{ user.Lastname }}</td>
+                    <td>
+                        {{ include('user/_delete_form.html.twig') }}
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="9">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    
 
 {% endblock %}
