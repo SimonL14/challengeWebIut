@@ -1,0 +1,14 @@
+
+:root {
+    --white: #fcfcfc;
+    --red: #c80000;
+    --primary-blue: #002653;
+    --second-blue: #002855;
+    font-family: "Nunito Sans", sans-serif;
+  }
+.footer{
+    position: absolute;
+  width: 100%; height: 50px;
+   /* Hauteur du pied de page */
+  background-color: var(--primary-blue);
+}

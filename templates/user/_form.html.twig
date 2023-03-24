@@ -1,0 +1,14 @@
+{{ form_start(form) }}
+    {{ form_row(form.email) }}
+    {% if is_granted('ROLE_ADMIN') == true %}
+        {{ form_row(form.roles) }}
+    {% endif %}
+        {# {{ form_row(form.roles) }} #}
+    {{ form_row(form.password) }}
+    {{ form_row(form.Firstname) }}
+    {{ form_row(form.Lastname) }}
+    {{ form_row(form.Telephone) }}
+    {{ form_row(form.isVerified) }}
+    {{ form_row(form.User_Event) }}
+    <button class="btn">{{ button_label|default('Save') }}</button>
+{{ form_end(form, {'render_rest': false}) }}

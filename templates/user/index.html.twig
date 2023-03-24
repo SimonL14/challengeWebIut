@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}User index{% endblock %}
+
+{% block body %}
+    <div class="user_body">
+        <h1 class="titre">Gestion des utilisateurs</h1>
+        <input type="text" placeholder="Nom utilisateur"></input>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th class="user_th">Utilisateur</th>
+                    <th class="delete_th">Suppression</th>
+                    {% if is_granted('ROLE_ADMIN') == true %}
+                    <th>Admin</th>
+                    {% endif %}
+                </tr>
+            </thead>
+            <tbody>
+            {% for user in users %}
+                <tr class="user_row">
+                    <td class="user_name">{{ user.Firstname }} {{ user.Lastname }}</td>
+                    <td>
+                        {{ include('user/_delete_form.html.twig') }}
+                    </td>
+                    {% if is_granted('ROLE_ADMIN') == true %}
+                <td>
+                    <a href="{{ path('app_user_show', {'id': user.id}) }}">show</a>
+                    <a href="{{ path('app_user_edit', {'id': user.id}) }}">edit</a>
+                </td>
+                {% endif %}
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="9">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    
+
+{% endblock %}
