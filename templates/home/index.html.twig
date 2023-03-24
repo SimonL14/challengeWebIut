@@ -35,21 +35,22 @@
 
     <div id="Events" class="events">
         <h2>Les évenements</h2>
-        <div class="card_container">
-            <img src="{{ asset('assets/img/2-IUT Calais_02-10-14_0457-scaled.jpg') }}" alt="">
-            <div class="card_info">
-                <h2>[Nom Evenement]</h2>
-                <div class="date_lieu_card">
-                    <h3>[Date]</h3>
-                    <h3>[Lieu]</h3>
+        {% for i in range(0, event|length - 1) %}
+            <div class="card_container">
+                <img src="{{ asset('assets/img/2-IUT Calais_02-10-14_0457-scaled.jpg') }}" alt="">
+                <div class="card_info">
+                    <h2>{{event[i].Name}}</h2>
+                    <div class="date_lieu_card">
+                        <h3>{{ event[i].Datedebut.format('d/m/Y') }} - {{ event[i].Datefin.format('d/m/Y') }}</h3>
+                        <h3>{{event[i].lieu}}</h3>
+                    </div>
+                    <div class="card_info_btn">
+                    <p>{{event[i].description}}</p>
+                    <a href="/event/{{event[i].id}}">En savoir plus <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
                 </div>
-                <div class="card_info_btn">
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse aliquam ad expedita et voluptas, sapiente voluptates pariatur labore, repellat, odio eligendi nihil aut earum suscipit voluptatibus eum sunt laudantium nisi.</p>
-                <a href="#">En savoir plus <i class="fa-solid fa-arrow-right"></i></a>
-                </div>
-                
             </div>
-        </div>
+        {% endfor %}
     </div>
 
 
