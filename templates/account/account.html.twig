@@ -1,10 +1,23 @@
 {% extends 'base.html.twig' %}
-
+{% block stylesheets %}
+			<link rel="stylesheet" href="{{ asset('assets/styles/stylesaccount.css') }}">
+            <link rel="stylesheet" href="{{ asset('assets/styles/styles.css') }}">
+			<link rel="stylesheet" href="{{ asset('assets/styles/stylesfooter.css') }}">
+{% endblock %}
 
 
 {% block body %}
 <div class="navigation_page">
-    <a href="{{ path('app_home') }}">Accueil</a> > <a> My Account </a>
+    <a class="lien" href="{{ path('app_home') }}">Accueil</a> > <a> My Account </a>
 </div> 
+
+<div class="entete">
+    <p><i class="fa fa-user"></i> {{app.user.firstname}} {{app.user.lastname}}</p>
+    <p><i class="fa fa-envelope"></i> {{app.user.email}}</p>
+    <p><i class="fa fa-phone"></i> {{app.user.telephone}}</p>
+    {% if app.user.roles == []  %}
+    <p><i class="fa fa-phone "></i> User</p>
+    {% endif %}
+</div>
 
 {% endblock %}
