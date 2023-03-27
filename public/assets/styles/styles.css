@@ -62,6 +62,107 @@ nav .link_nav ul li a:hover {
   color: var(--primary-blue);
 }
 
+/* Login Desktop */
+
+input[type="email"],
+select {
+  width: 380px;
+  padding: 12px 20px;
+  margin: 8px;
+
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type="text"],
+select {
+  width: 380px;
+  padding: 12px 20px;
+  margin: 8px;
+
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type="password"],
+select {
+  width: 380px;
+  padding: 12px 20px;
+  margin: 8px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.boxlogin {
+  background-color: #002653;
+  border-radius: 0.5rem;
+  margin: 8px;
+  text-align: center;
+  max-width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2rem;
+}
+
+.h1login {
+  color: var(--white);
+  text-align: center;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.boxlogin a {
+  border-radius: 4px;
+  width: fit-content;
+  padding: 0.5rem;
+  height: 20px;
+  background-color: var(--red);
+  color: var(--white);
+  font-family: "Nunito Sans", sans-serif;
+}
+
+/*Register Desktop*/
+.boxlogin button {
+  text-decoration: none;
+  color: var(--primary-blue);
+  background-color: var(--white);
+  padding: 1rem;
+  width: fit-content;
+  border-radius: 10px;
+  justify-content: flex-end;
+  font-family: "Nunito Sans", sans-serif;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.boxlogin button:hover {
+  text-decoration: none;
+  background-color: var(--primary-blue);
+  border: 1px solid var(--white);
+  color: var(--white);
+  padding: 1rem;
+  width: fit-content;
+  border-radius: 10px;
+  justify-content: flex-end;
+  font-family: "Nunito Sans", sans-serif;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.h1agree {
+  color: var(--white);
+  text-align: center;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+}
 /* HeroBox */
 
 .hero_box {
@@ -146,6 +247,13 @@ nav .link_nav ul li a:hover {
   border-radius: 30px;
 }
 
+.card_container a {
+  display: flex;
+  margin-left: auto;
+  gap: 1rem;
+  align-items: center;
+}
+
 .card_info {
   margin: 1rem;
 }
@@ -160,6 +268,7 @@ nav .link_nav ul li a:hover {
 .card_info {
   display: flex;
   flex-direction: column;
+  width: 900px;
 }
 
 .card_btn {
@@ -179,6 +288,15 @@ nav .link_nav ul li a:hover {
   background-color: var(--primary-blue);
   border: 1px solid var(--white);
   color: var(--white);
+}
+.card_info_btn {
+  max-width: 800px;
+}
+
+.p_info_index {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* MENTION LEGALE */
@@ -237,14 +355,24 @@ nav .link_nav ul li a:hover {
     margin: 0 auto;
     object-fit: cover;
   }
+  .card_info {
+    display: flex;
+    flex-direction: column;
+    width: 370px;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+  }
+
+  .p_info_index {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 
   .card_info h2 {
     margin: 0 auto;
   }
 
-  .card_info {
-    margin: 0 1rem;
-  }
   .date_lieu_card {
     margin: 0 1rem;
   }
@@ -253,5 +381,33 @@ nav .link_nav ul li a:hover {
     display: flex;
     justify-content: center;
     margin: 1rem;
+  }
+
+  /* Login / Sign up */
+
+  .boxlogin {
+    max-width: 80%;
+  }
+
+  input[type="email"],
+  select {
+    width: 90%;
+    padding: 12px 20px;
+    margin: 8px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  input[type="password"],
+  select {
+    width: 90%;
+    padding: 12px 20px;
+    margin: 8px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
   }
 }
