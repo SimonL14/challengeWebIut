@@ -9,9 +9,7 @@
   font-family: "Nunito Sans", sans-serif;
 }
 
-body {
-  margin: 0px;
-}
+
 
 /* NavBar Desktop*/
 nav {
@@ -225,7 +223,7 @@ nav .link_nav ul li a:hover {
     margin: 0 auto;
     margin-bottom: 5rem;
   }
-
+ 
   /* CARD EVENT */
   .card_container {
     display: flex;
@@ -253,33 +251,4 @@ nav .link_nav ul li a:hover {
     display: flex;
     justify-content: center;
     margin: 1rem;
-  }
-
-  /* Login / Sign up */
-
-  .boxlogin {
-    max-width: 80%;
-  }
-
-  input[type="email"],
-  select {
-    width: 90%;
-    padding: 12px 20px;
-    margin: 8px;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-  }
-
-  input[type="password"],
-  select {
-    width: 90%;
-    padding: 12px 20px;
-    margin: 8px;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-  }
-}
+  }}

@@ -45,9 +45,26 @@
 
 {% block body %}
 {% endblock %}
+
 <footer>
+
 	<div class="footer">
-		<p>Hello</p>
+		<a href="{{ path('app_home') }}"><img  src="{{ asset('assets/img/logo_iut.png') }}" alt="logo des iut" class="logo_nav"></a>
+		<div class="listtext">
+		 <a href="{{ path('app_home') }}">Acceuil</a>
+		 {% if app.user %}
+		 <a href="{{ path('app_account') }}">Mon Compte</a>
+		 {% else %}
+		 {% endif %}
+		 <a href="https://www.iut.fr">IUT INFO</a>
+		 <a href="{{ path('app_mention') }}">Mentions légales</a>
+		</div>
+		<div class="social-icons">
+			<a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+			<a href="https://www.facebook.com"><i class="fab fa-facebook"></i></a>
+			<a href="https://www.linkedin.com"><i class="fab fa-linkedin"></i></a>
+			<a href="https://twitter.com"><i class="fab fa-twitter"></i></a>
+		</div>
 	</div>
 </footer>
 </body>
