@@ -23,4 +23,12 @@ class HomeController extends AbstractController
             'controller_name' => 'HomeController',
         ]);
     }
+
+    #[Route('/detailevent', name: 'app_detailEvent')]
+    public function detailEvent(): Response
+    {
+        return $this->render('event/eventDetails.html.twig', [
+            'controller_name' => 'HomeController',
+        ]);
+    }
 }

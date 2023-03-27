@@ -1,0 +1,86 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('assets/styles/styles.css') }}">
+	<link rel="stylesheet" href="{{ asset('assets/styles/stylesDetailsEvent.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/styles/stylesFooter.css') }}">
+{% endblock %}
+
+
+{% block title %}Détails de l'événement{% endblock %}
+
+{% block body %}
+
+    <div class="navigation_page">
+        <a href="{{ path('app_home') }}">Accueil</a> > <a>[NOM EVENT] </a>{#<a href="{{ path('event_show', {'id': event.id}) }}">{{ event.title }}</a> #}
+    </div>
+
+<div class="header_event">
+            <div class="container_header">
+                <div class="header_event__title">
+                    <h2>[NOM EVENT]</h2>
+                </div>
+                <div class="detail_header">
+                    <div class="header_event__date">
+                        <h2>[DATE EVENT]</h2>
+                    </div><div class="header_event__date">
+                        <h2>[Lieu EVENT]</h2>
+                    </div>
+                </div>               
+            </div>
+
+</div>
+
+<div class="detail_event">
+    <div class="description">
+        <h2>Description</h2>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate non nisi aut officiis a minima maxime vero doloremque nobis, tenetur ut deleniti ratione quibusdam dolore ducimus recusandae fugiat at ab. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius ducimus maiores ratione nisi magni, voluptate omnis, architecto nulla temporibus ea adipisci unde exercitationem ipsum error autem enim, iure excepturi eaque! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga molestias quas ut, magnam numquam reiciendis in eius ex nesciunt provident corrupti, facere tenetur totam natus id. Dolores quae aspernatur laborum! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit magni ut neque nam ipsum architecto aliquam laborum dolor modi. Expedita corrupti excepturi tempora, corporis odit odio ut et unde nostrum?</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate non nisi aut officiis a minima maxime vero doloremque nobis, tenetur ut deleniti ratione quibusdam dolore ducimus recusandae fugiat at ab. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius ducimus maiores ratione nisi magni, voluptate omnis, architecto nulla temporibus ea adipisci unde exercitationem ipsum error autem enim, iure excepturi eaque! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga molestias quas ut, magnam numquam reiciendis in eius ex nesciunt provident corrupti, facere tenetur totam natus id. Dolores quae aspernatur laborum! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit magni ut neque nam ipsum architecto aliquam laborum dolor modi. Expedita corrupti excepturi tempora, corporis odit odio ut et unde nostrum?</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate non nisi aut officiis a minima maxime vero doloremque nobis, tenetur ut deleniti ratione quibusdam dolore ducimus recusandae fugiat at ab. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius ducimus maiores ratione nisi magni, voluptate omnis, architecto nulla temporibus ea adipisci unde exercitationem ipsum error autem enim, iure excepturi eaque! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga molestias quas ut, magnam numquam reiciendis in eius ex nesciunt provident corrupti, facere tenetur totam natus id. Dolores quae aspernatur laborum! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit magni ut neque nam ipsum architecto aliquam laborum dolor modi. Expedita corrupti excepturi tempora, corporis odit odio ut et unde nostrum?</p>
+    </div>
+    <div class="menu">
+        <h2>Menu</h2>
+        <p>Menu</p>
+    </div>
+    <div class="prest_supp">
+        <h2>Prestation supplémentaire</h2>
+        <p>Préstation supp</p> 
+    </div>
+    <div class="lieu">
+        <h2>Lieu</h2>
+        <p>Map</p>
+    </div>
+</div>
+    {# <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="event">
+                    <div class="event__header">
+                        <div class="event__header__title">
+                            <h1>{{ event.title }}</h1>
+                        </div>
+                        <div class="event__header__date">
+                            <p>{{ event.date|date('d/m/Y') }}</p>
+                        </div>
+                    </div>
+                    <div class="event__content">
+                        <div class="event__content__description">
+                            <p>{{ event.description }}</p>
+                        </div>
+                        <div class="event__content__image">
+                            <img src="{{ asset('uploads/' ~ event.image) }}" alt="">
+                        </div>
+                    </div>
+                    <div class="event__footer">
+                        <div class="event__footer__location">
+                            <p>{{ event.location }}</p>
+                        </div>
+                        <div class="event__footer__price">
+                            <p>{{ event.price }} €</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+     #}
+{% endblock %}
