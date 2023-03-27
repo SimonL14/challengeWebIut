@@ -9,6 +9,12 @@
 .titre{
   text-align: center;
 }
+
+.searchBar{
+  display: block;
+  margin: auto;
+  margin: 20px 0px;
+}
 table{
   border-collapse: collapse;
 }
