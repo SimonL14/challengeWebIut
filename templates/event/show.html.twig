@@ -73,9 +73,9 @@
                 </div>
                 <div class="detail_header">
                     <div class="header_event__date">
-                        <h2>{{event.Name}}</h2>
+                        <h2>Début : {{ event.DateDebut ? event.DateDebut|date('Y-m-d') : '' }}</h2>
                     </div><div class="header_event__date">
-                        <h2>{{event.Name}}</h2>
+                        <h2>Fin : {{ event.DateFin ? event.DateFin|date('Y-m-d') : '' }}</h2>
                     </div>
                 </div>               
             </div>

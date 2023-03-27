@@ -22,21 +22,23 @@ class RegistrationFormType extends AbstractType
             ->add('email', EmailType::class, array(
                 'attr' => array(
                     'placeholder' => 'Email'
+                    
                 )
             ))
             ->add('Firstname', TextType::class, array(
                 'attr' => array(
-                    'placeholder' => 'Firstname'
+                    'placeholder' => 'Firstname',
+                    'type' => 'text'
                 )
             ))
             ->add('Lastname', TextType::class, array(
                 'attr' => array(
-                    'placeholder' => 'Lastname'
+                    'placeholder' => 'Lastname',
                 )
             ))
             ->add('Telephone', TextType::class, array(
                 'attr' => array(
-                    'placeholder' => 'Telephone'
+                    'placeholder' => 'Telephone',
                 )
             ))
             ->add('agreeTerms', CheckboxType::class, [

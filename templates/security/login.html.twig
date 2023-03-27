@@ -5,7 +5,8 @@
 {% block head %}<meta name="viewport" content="width=device-width, initial-scale=1.0">{% endblock %}
 {% block stylesheets %}
 			<link rel="stylesheet" href="{{ asset('assets/styles/styles.css') }}">
-			<link rel="stylesheet" href="{{ asset('assets/styles/styleslogin.css') }}">
+            <link rel="stylesheet" href="{{ asset('assets/styles/styleslogin.css') }}">
+            <link rel="stylesheet" href="{{ asset('assets/styles/stylesfooter.css') }}">
 {% endblock %}
 {% block body %}
 <form method="post">
@@ -22,13 +23,13 @@
     
 
     <div class ="boxlogin">
-    <h1 class="h1login">Connexion</h1>
-        <div>
-            <input type="email" value="{{ last_username }}"  placeholder="Email" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
-        </div>
-        <div>
-            <input type="password" name="password" id="inputPassword" placeholder="Mot de passe" class="form-control" autocomplete="current-password" required>
-        </div>
+        <h1 class="h1login">Connexion</h1>
+            <div>
+                <input type="email" value="{{ last_username }}"  placeholder="Email" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
+            </div>
+            <div>
+                <input type="password" name="password" id="inputPassword" placeholder="Mot de passe" class="form-control" autocomplete="current-password" required>
+            </div>
         
 
         <input type="hidden" name="_csrf_token"
@@ -53,7 +54,7 @@
             </label>
         </div>
     #}
-
-    
+        
+    </div>    
 </form>
 {% endblock %}

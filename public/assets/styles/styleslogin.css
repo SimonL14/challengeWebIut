@@ -3,12 +3,12 @@
 input[type=email], select {
     width: 380px;
     padding: 12px 20px;
-    margin: 8px ;
-    
+    margin: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
   }
+   
   input[type=password], select {
     width: 380px;
     padding: 12px 20px;
@@ -22,7 +22,7 @@ input[type=email], select {
   .boxlogin {
     background-color: #002653;
     border-radius: 0.5rem;
-    margin: 8px;  
+    margin: 9px;  
     text-align: center;
     max-width: 50%;
     display: flex;
@@ -31,6 +31,7 @@ input[type=email], select {
     margin-left: auto;
     margin-right: auto;
     margin-top: 2rem;
+    margin-bottom: 50px; 
   }
   
   .h1login {
@@ -47,6 +48,7 @@ input[type=email], select {
     width: fit-content;
     padding: 0.5rem;
     height: 20px;
+    
     background-color: var(--red);
     color: var(--white);
     font-family: "Nunito Sans", sans-serif;
