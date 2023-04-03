@@ -13,26 +13,37 @@
 footer{
     background-color: var(--white);
     box-shadow: 0 -4px 6px -6px #222 !important;
-    display: flex;
   }
+.footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
 .footer img{
     padding: 10px;
-    padding-left: 100px;
     width: fit-content;
     max-width: 200px;
     margin: 0.75rem;
 }
 .listtext{
-    text-align: center;
     display: flex;
     flex-direction: column;
-    padding-top: 30px;
+    justify-content: center;
     width: fit-content;
-    padding-left: 100px;
     color: var(--primary-blue);
 }
 .listtext a{
+  border-left: 20px;
+  border-right: 20px;
     cursor: pointer;
+}
+.social-icons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.social-icons a{
+    padding: 10px;
 }
 
 @media only screen and (max-width: 1024px) {
