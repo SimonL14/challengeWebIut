@@ -67,6 +67,25 @@ td{
 .delete_icon{
   filter: invert(100%);
 }
+.adminButton{
+  margin: auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px;
+  background-color: var(--primary-blue);
+  color: var(--white);
+  border-radius: 4px;
+  width: 50px;
+  height: 30px;
+}
+.adminButton:hover{
+  background-color: var(--second-blue);
+  cursor: pointer;
+}
+.adminButton a{
+  color: var(--white);
+  text-decoration: none;
+}
 
 @media only screen and (max-width: 768px) {
   .btn_delete_user {

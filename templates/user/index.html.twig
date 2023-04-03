@@ -26,8 +26,8 @@
                     </td>
                     {% if is_granted('ROLE_ADMIN') == true %}
                 <td>
-                    <a href="{{ path('app_user_show', {'id': user.id}) }}">show</a>
-                    <a href="{{ path('app_user_edit', {'id': user.id}) }}">edit</a>
+                    <button class="adminButton" onclick="window.location.href='{{ path('app_user_show', {'id': user.id}) }}';">Show</button>
+                    <button class="adminButton" onclick="window.location.href='{{ path('app_user_edit', {'id': user.id}) }}';">Edit</button>
                 </td>
                 {% endif %}
                 </tr>
