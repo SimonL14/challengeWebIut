@@ -19,7 +19,7 @@
 	<body>
 		<!-- Navbar -->
 		<nav>
-			<img src="{{ asset('assets/img/logo_iut.png') }}" alt="logo des iut" class="logo_nav">
+			<a href="{{ path('app_home') }}"><img  src="{{ asset('assets/img/logo_iut.png') }}" alt="logo des iut" class="logo_nav"></a>
 			<div class="link_nav">
 				<ul>
 					{% if app.user %}

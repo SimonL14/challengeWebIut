@@ -218,6 +218,19 @@ select {
 .btn_see_Event {
   background-color: var(--second-blue);
   color: var(--white);
+  border: solid 5px var(--second-blue);
+  padding: 2rem;
+  text-decoration: none;
+  transform: translateY(-50%);
+  display: block;
+  margin: 0 auto;
+  transition: 0.2s;
+}
+.btn_see_Event:hover {
+  background-color: var(--white);
+  color: var(--second-blue);
+  border: solid 5px var(--second-blue);
+  transition: 0.2s;
   padding: 2rem;
   text-decoration: none;
   transform: translateY(-50%);
