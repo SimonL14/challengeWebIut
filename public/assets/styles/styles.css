@@ -64,28 +64,31 @@ nav .link_nav ul li a:hover {
 
 /* Login Desktop */
 
-input[type=email], select {
+input[type="email"],
+select {
   width: 380px;
   padding: 12px 20px;
-  margin: 8px ;
-  
+  margin: 8px;
+
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
 }
-input[type=text], select {
+input[type="text"],
+select {
   width: 380px;
   padding: 12px 20px;
-  margin: 8px ;
-  
+  margin: 8px;
+
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
 }
-input[type=password], select {
+input[type="password"],
+select {
   width: 380px;
   padding: 12px 20px;
-  margin: 8px ;
+  margin: 8px;
   display: inline-block;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -95,7 +98,7 @@ input[type=password], select {
 .boxlogin {
   background-color: #002653;
   border-radius: 0.5rem;
-  margin: 8px;  
+  margin: 8px;
   text-align: center;
   max-width: 50%;
   display: flex;
@@ -112,7 +115,6 @@ input[type=password], select {
   width: fit-content;
   margin-left: auto;
   margin-right: auto;
- 
 }
 
 .boxlogin a {
@@ -160,7 +162,6 @@ input[type=password], select {
   margin-left: auto;
   margin-right: auto;
   display: flex;
- 
 }
 /* HeroBox */
 
@@ -246,6 +247,13 @@ input[type=password], select {
   border-radius: 30px;
 }
 
+.card_container a {
+  display: flex;
+  margin-left: auto;
+  gap: 1rem;
+  align-items: center;
+}
+
 .card_info {
   margin: 1rem;
 }
@@ -260,6 +268,7 @@ input[type=password], select {
 .card_info {
   display: flex;
   flex-direction: column;
+  width: 900px;
 }
 
 .card_btn {
@@ -279,6 +288,15 @@ input[type=password], select {
   background-color: var(--primary-blue);
   border: 1px solid var(--white);
   color: var(--white);
+}
+.card_info_btn {
+  max-width: 800px;
+}
+
+.p_info_index {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* MENTION LEGALE */
@@ -337,14 +355,24 @@ input[type=password], select {
     margin: 0 auto;
     object-fit: cover;
   }
+  .card_info {
+    display: flex;
+    flex-direction: column;
+    width: 370px;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+  }
+
+  .p_info_index {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 
   .card_info h2 {
     margin: 0 auto;
   }
 
-  .card_info {
-    margin: 0 1rem;
-  }
   .date_lieu_card {
     margin: 0 1rem;
   }

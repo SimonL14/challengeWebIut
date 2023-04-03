@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{# {% extends 'base.html.twig' %}
 
 {% block title %}Event{% endblock %}
 
@@ -47,4 +47,58 @@
     <a href="{{ path('app_event_edit', {'id': event.id}) }}">edit</a>
 
     {{ include('event/_delete_form.html.twig') }}
+{% endblock %} #}
+
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('assets/styles/styles.css') }}">
+	<link rel="stylesheet" href="{{ asset('assets/styles/stylesDetailsEvent.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/styles/stylesFooter.css') }}">
+{% endblock %}
+
+
+{% block title %}Détails de l'événement{% endblock %}
+
+{% block body %}
+
+    <div class="navigation_page">
+        <a href="{{ path('app_home') }}">Accueil</a> > <a>{{event.Name}} </a>{#<a href="{{ path('event_show', {'id': event.id}) }}">{{ event.title }}</a> #}
+    </div>
+
+<div class="header_event">
+            <div class="container_header">
+                <div class="header_event__title">
+                    <h2>{{event.Name}}</h2>
+                </div>
+                <div class="detail_header">
+                    <div class="header_event__date">
+                        <h2>Début : {{ event.DateDebut ? event.DateDebut|date('Y-m-d') : '' }}</h2>
+                    </div><div class="header_event__date">
+                        <h2>Fin : {{ event.DateFin ? event.DateFin|date('Y-m-d') : '' }}</h2>
+                    </div>
+                </div>               
+            </div>
+
+</div>
+
+<div class="detail_event">
+    <div class="description">
+        <h2>Description</h2>
+        <p>{{ event.description }}</p>
+        </div>
+    <div class="menu">
+        <h2>Menu</h2>
+        <p>Menu</p>
+    </div>
+    <div class="prest_supp">
+        <h2>Prestation supplémentaire</h2>
+        <p>Préstation supp</p> 
+    </div>
+    <div class="lieu">
+        <h2>Lieu</h2>
+        <p>{{ event.lieu }}</p>
+        <p>Map</p>
+    </div>
+</div>
 {% endblock %}
