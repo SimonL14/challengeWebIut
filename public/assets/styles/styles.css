@@ -317,6 +317,21 @@ select {
   padding-bottom: 0.8rem;
 }
 
+/* NEW EVENT */
+
+.create_envent_title {
+  text-align: center;
+  padding-top: 1rem;
+}
+
+.new_event_div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
 @media only screen and (max-width: 1024px) {
   .next_event_container {
     display: block;

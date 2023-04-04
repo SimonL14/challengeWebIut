@@ -1,11 +1,20 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Event{% endblock %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('assets/styles/styles.css') }}">
+	<link rel="stylesheet" href="{{ asset('assets/styles/stylesDetailsEvent.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/styles/stylesFooter.css') }}">
+{% endblock %}
+
+{% block title %}Créer un evennement{% endblock %}
 
 {% block body %}
-    <h1>Create new Event</h1>
-
-    {{ include('event/_form.html.twig') }}
+        <h1 class="create_envent_title">Créer un évènement</h1>
+        <div class="new_event_div">
+            {{ include('event/_form.html.twig') }}
+        </div>
+        
 
     <a href="{{ path('app_home') }}">back to list</a>
 {% endblock %}
