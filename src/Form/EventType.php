@@ -3,9 +3,13 @@
 namespace App\Form;
 
 use App\Entity\Event;
+
+use Symfony\Component\Form\Extension\Core\Type\DateType;
+
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 
 class EventType extends AbstractType
@@ -19,10 +23,10 @@ class EventType extends AbstractType
             ->add('Creator')
             ->add('Date_debut', null, [
                 'label' => 'Date de début',
-            ])
+            ], DateType::class)
             ->add('Date_fin', null, [
                 'label' => 'Date de fin',
-            ])
+            ], DateType::class)
             ->add('description', null, [
                 'label' => 'Description  ',
             ])
@@ -33,7 +37,10 @@ class EventType extends AbstractType
                 'required' => true,
                 'label' => 'Sélection image'
             ])
-            ->add('Id_depart', null, [
+            ->add('Id_depart')
+            ->add('entree')
+            ->add('plat')
+            ->add('dessert', null, [
                 'label' => 'Département',
             ]);
     }
