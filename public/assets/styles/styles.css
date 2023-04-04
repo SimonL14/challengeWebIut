@@ -6,6 +6,7 @@
   --red: #c80000;
   --primary-blue: #002653;
   --second-blue: #002855;
+  --hover-blue: #0b4960;
   font-family: "Nunito Sans", sans-serif;
 }
 
@@ -26,6 +27,14 @@ nav {
 nav .logo_nav {
   width: 200px;
   margin: 0.75rem;
+  padding: 1rem 2rem;
+}
+nav .logo_nav:hover {
+  width: 200px;
+  margin: 0.75rem;
+  background-color: grey;
+  transition: 0.3s;
+  border-radius: 4px;
 }
 
 nav .link_nav ul {
@@ -45,6 +54,7 @@ nav .link_nav ul li a i {
   fill: currentColor;
 }
 nav .link_nav ul li a {
+  transition: 0.3s;
   border: 1px solid var(--primary-blue);
   border-radius: 4px;
   padding: 1rem;
@@ -54,6 +64,7 @@ nav .link_nav ul li a {
 }
 
 nav .link_nav ul li a:hover {
+  transition: 0.3s;
   border: 1px solid var(--primary-blue);
   border-radius: 4px;
   padding: 1rem;
@@ -224,13 +235,13 @@ select {
   transform: translateY(-50%);
   display: block;
   margin: 0 auto;
-  transition: 0.2s;
+  transition: 0.3s;
 }
 .btn_see_Event:hover {
   background-color: var(--white);
   color: var(--second-blue);
   border: solid 5px var(--second-blue);
-  transition: 0.2s;
+  transition: 0.3s;
   padding: 2rem;
   text-decoration: none;
   transform: translateY(-50%);
@@ -253,6 +264,11 @@ select {
   color: var(--white);
   flex-direction: row;
   margin-bottom: 2rem;
+  transition: 0.3s;
+}
+.card_container:hover{
+  background-color: var(--hover-blue);
+  transition: 0.3s;
 }
 .card_container img {
   width: 300px;
@@ -296,8 +312,11 @@ select {
   padding: 1rem;
   width: fit-content;
   border-radius: 10px;
+  border: 1px solid var(--white);
+  transition: 0.3s;
 }
 .card_container a:hover {
+  transition: 0.3s;
   background-color: var(--primary-blue);
   border: 1px solid var(--white);
   color: var(--white);
