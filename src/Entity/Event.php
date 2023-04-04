@@ -50,6 +50,15 @@ class Event
     #[ORM\Column(length: 255)]
     private ?string $image = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $entree = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $plat = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $dessert = null;
+
     public function __construct()
     {
         $this->devis = new ArrayCollection();
@@ -241,6 +250,42 @@ class Event
     public function setImage(string $image): self
     {
         $this->image = $image;
+
+        return $this;
+    }
+
+    public function getEntree(): ?string
+    {
+        return $this->entree;
+    }
+
+    public function setEntree(string $entree): self
+    {
+        $this->entree = $entree;
+
+        return $this;
+    }
+
+    public function getPlat(): ?string
+    {
+        return $this->plat;
+    }
+
+    public function setPlat(string $plat): self
+    {
+        $this->plat = $plat;
+
+        return $this;
+    }
+
+    public function getDessert(): ?string
+    {
+        return $this->dessert;
+    }
+
+    public function setDessert(string $dessert): self
+    {
+        $this->dessert = $dessert;
 
         return $this;
     }
