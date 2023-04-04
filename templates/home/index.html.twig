@@ -1,6 +1,9 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Accueil{% endblock %}
+{% block javascript %}
+	<script src="{{ asset('assets/styles/styles.js') }}"></script>
+{% endblock %}
 
 {% block body %}
     <div class="hero_box">
@@ -35,26 +38,41 @@
 
     <div id="Events" class="events">
         <h2>Les évenements</h2>
-        {% for i in range(0, event|length - 1) %}
-            <div class="card_container">
-                <img src="{{ asset('assets/img/2-IUT Calais_02-10-14_0457-scaled.jpg') }}" alt="">
-                <div class="card_info">
-                    <h2>{{event[i].Name}}</h2>
-                    <div class="date_lieu_card">
-                        <h3>{{ event[i].Datedebut.format('d/m/Y') }} - {{ event[i].Datefin.format('d/m/Y') }}</h3>
-                        <h3>{{event[i].lieu}}</h3>
-                    </div>
-                    <div class="card_info_btn">
-                    <p>{{event[i].description}}</p>
-                    <a href="/event/{{event[i].id}}">En savoir plus <i class="fa-solid fa-arrow-right"></i></a>
+        {% if event|length != 0 %}
+            {% for i in range(0, event|length - 1) %}
+                <div class="card_container">
+                    <img src="{{ asset('assets/img/2-IUT Calais_02-10-14_0457-scaled.jpg') }}" alt="">
+                    <div class="card_info">
+                        <h2>{{event[i].Name}}</h2>
+                        <div class="date_lieu_card">
+                            <h3>{{ event[i].Datedebut.format('d/m/Y') }} - {{ event[i].Datefin.format('d/m/Y') }}</h3>
+                            <h3>{{event[i].lieu}}</h3>
+                        </div>
+                        <div class="card_info_btn">
+                            <p class="p_info_index">{{event[i].description}}</p>
+                            <script> 
+                                function truncateText(selector, maxLength) {
+                                    var element = document.querySelector(selector),
+                                        truncated = element.innerText;
+
+                                    if (truncated.length > maxLength) {
+                                        truncated = truncated.substr(0,maxLength) + '...';
+                                    }
+                                    return truncated;
+                                }
+
+                                document.querySelector('.p_info_index').innerText = truncateText('.p_info_index', 300);
+                            </script>
+                            <a href="/event/{{event[i].id}}">En savoir plus <i class="moreInfoButton fa-solid fa-arrow-right"></i></a>
+                        </div>
                     </div>
                 </div>
-            </div>
-        {% endfor %}
+            {% endfor %}
+        {% endif %}
     </div>
 
 
-    <a href="{{ path('app_mention') }}">BTN MENTIONS</a>
+    
 
 
 {# <style>

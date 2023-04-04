@@ -6,6 +6,7 @@
   --red: #c80000;
   --primary-blue: #002653;
   --second-blue: #002855;
+  --hover-blue: #0b4960;
   font-family: "Nunito Sans", sans-serif;
 }
 
@@ -26,6 +27,14 @@ nav {
 nav .logo_nav {
   width: 200px;
   margin: 0.75rem;
+  padding: 1rem 2rem;
+}
+nav .logo_nav:hover {
+  width: 200px;
+  margin: 0.75rem;
+  background-color: grey;
+  transition: 0.3s;
+  border-radius: 4px;
 }
 
 nav .link_nav ul {
@@ -45,6 +54,7 @@ nav .link_nav ul li a i {
   fill: currentColor;
 }
 nav .link_nav ul li a {
+  transition: 0.3s;
   border: 1px solid var(--primary-blue);
   border-radius: 4px;
   padding: 1rem;
@@ -54,6 +64,7 @@ nav .link_nav ul li a {
 }
 
 nav .link_nav ul li a:hover {
+  transition: 0.3s;
   border: 1px solid var(--primary-blue);
   border-radius: 4px;
   padding: 1rem;
@@ -64,28 +75,31 @@ nav .link_nav ul li a:hover {
 
 /* Login Desktop */
 
-input[type=email], select {
+input[type="email"],
+select {
   width: 380px;
   padding: 12px 20px;
-  margin: 8px ;
-  
+  margin: 8px;
+
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
 }
-input[type=text], select {
+input[type="text"],
+select {
   width: 380px;
   padding: 12px 20px;
-  margin: 8px ;
-  
+  margin: 8px;
+
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
 }
-input[type=password], select {
+input[type="password"],
+select {
   width: 380px;
   padding: 12px 20px;
-  margin: 8px ;
+  margin: 8px;
   display: inline-block;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -95,7 +109,7 @@ input[type=password], select {
 .boxlogin {
   background-color: #002653;
   border-radius: 0.5rem;
-  margin: 8px;  
+  margin: 8px;
   text-align: center;
   max-width: 50%;
   display: flex;
@@ -112,7 +126,6 @@ input[type=password], select {
   width: fit-content;
   margin-left: auto;
   margin-right: auto;
- 
 }
 
 .boxlogin a {
@@ -160,7 +173,6 @@ input[type=password], select {
   margin-left: auto;
   margin-right: auto;
   display: flex;
- 
 }
 /* HeroBox */
 
@@ -217,6 +229,19 @@ input[type=password], select {
 .btn_see_Event {
   background-color: var(--second-blue);
   color: var(--white);
+  border: solid 5px var(--second-blue);
+  padding: 2rem;
+  text-decoration: none;
+  transform: translateY(-50%);
+  display: block;
+  margin: 0 auto;
+  transition: 0.3s;
+}
+.btn_see_Event:hover {
+  background-color: var(--white);
+  color: var(--second-blue);
+  border: solid 5px var(--second-blue);
+  transition: 0.3s;
   padding: 2rem;
   text-decoration: none;
   transform: translateY(-50%);
@@ -239,11 +264,23 @@ input[type=password], select {
   color: var(--white);
   flex-direction: row;
   margin-bottom: 2rem;
+  transition: 0.3s;
+}
+.card_container:hover{
+  background-color: var(--hover-blue);
+  transition: 0.3s;
 }
 .card_container img {
   width: 300px;
   padding: 2rem;
   border-radius: 30px;
+}
+
+.card_container a {
+  display: flex;
+  margin-left: auto;
+  gap: 1rem;
+  align-items: center;
 }
 
 .card_info {
@@ -260,6 +297,7 @@ input[type=password], select {
 .card_info {
   display: flex;
   flex-direction: column;
+  width: 900px;
 }
 
 .card_btn {
@@ -274,11 +312,23 @@ input[type=password], select {
   padding: 1rem;
   width: fit-content;
   border-radius: 10px;
+  border: 1px solid var(--white);
+  transition: 0.3s;
 }
 .card_container a:hover {
+  transition: 0.3s;
   background-color: var(--primary-blue);
   border: 1px solid var(--white);
   color: var(--white);
+}
+.card_info_btn {
+  max-width: 800px;
+}
+
+.p_info_index {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* MENTION LEGALE */
@@ -337,14 +387,24 @@ input[type=password], select {
     margin: 0 auto;
     object-fit: cover;
   }
+  .card_info {
+    display: flex;
+    flex-direction: column;
+    width: 370px;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+  }
+
+  .p_info_index {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 
   .card_info h2 {
     margin: 0 auto;
   }
 
-  .card_info {
-    margin: 0 1rem;
-  }
   .date_lieu_card {
     margin: 0 1rem;
   }

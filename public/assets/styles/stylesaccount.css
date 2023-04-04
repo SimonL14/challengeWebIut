@@ -1,0 +1,35 @@
+/* Variable colors : */
+
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap");
+:root {
+  --white: #fcfcfc;
+  --red: #c80000;
+  --primary-blue: #002653;
+  --second-blue: #002855;
+  font-family: "Nunito Sans", sans-serif;
+}
+.lien{
+    margin-left: 8px;
+}
+.entete{
+    background-color: var(--primary-blue);
+    margin-top: 10px;
+    padding: 100px;
+}
+
+.entete p{
+    color: var(--white);
+}
+.user-icon {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 50px;
+}
+
+.user-icon i {
+    font-size: 24px;
+    color: #fff;
+}
