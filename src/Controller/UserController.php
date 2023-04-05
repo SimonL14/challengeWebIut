@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\User;
+use App\Form\EditUserType;
 use App\Form\UserType;
 use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -74,5 +75,27 @@ class UserController extends AbstractController
         }
 
         return $this->redirectToRoute('app_user_index', [], Response::HTTP_SEE_OTHER);
+    }
+
+    #[Route('/user/account/edit', name: 'app_user_account_edit', methods: ['GET', 'POST'])]
+    public function editAccount(Request $request, UserRepository $userRepository): Response
+    {
+        $user = $this->getUser();
+        $form = $this->createForm(EditUserType::class, $user);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $userRepository->save($user, true);
+
+            $this->addFlash('success', 'Votre compte a bien été modifié');
+            $userRepository->save($user, true);
+
+            return $this->redirectToRoute('app_account', [], Response::HTTP_SEE_OTHER);
+        }
+
+        return $this->renderForm('account/editAccount.html.twig', [
+            'user' => $user,
+            'form' => $form,
+        ]);
     }
 }

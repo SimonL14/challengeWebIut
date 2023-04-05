@@ -5,7 +5,7 @@
 			<link rel="stylesheet" href="{{ asset('assets/styles/stylesfooter.css') }}">
 {% endblock %}
 
-
+{% block title %}Profil de {{app.user.firstname}} {{app.user.lastname}}{% endblock %}
 {% block body %}
 <div class="navigation_page">
     <a class="lien" href="{{ path('app_home') }}">Accueil</a> > <a> Mon compte </a>
@@ -19,7 +19,7 @@
         {% if app.user.roles == []  %}
             <p><i class="fa fa-phone "></i> User</p>
         {% endif %}
-        <a href="#" class="link_btn_account" > Modifier mes informations <i class="fa-solid fa-arrow-right"></i></a>
+        <a href="{{path('app_user_account_edit')}}" class="link_btn_account" > Modifier mes informations <i class="fa-solid fa-arrow-right"></i></a>
     </div>
 
     
