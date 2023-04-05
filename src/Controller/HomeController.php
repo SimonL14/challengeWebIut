@@ -3,11 +3,12 @@
 namespace App\Controller;
 
 use App\Entity\Event;
-
+use Doctrine\ORM\Mapping\Id;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Doctrine\Persistence\ManagerRegistry;
+use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 
 class HomeController extends AbstractController
 {
@@ -30,12 +31,16 @@ class HomeController extends AbstractController
             'controller_name' => 'HomeController',
         ]);
     }
-    
+
     #[Route('/myaccount', name: 'app_account')]
-    public function account(): Response
+    public function account(ManagerRegistry $doctrine, TokenStorageInterface $tokenStorage): Response
     {
+        $user = $this->getUser();
+        $events = $user->getUserEvent();
+
         return $this->render('account/account.html.twig', [
             'controller_name' => 'HomeController',
+            'events' => $events
         ]);
     }
     

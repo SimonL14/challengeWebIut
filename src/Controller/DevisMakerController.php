@@ -8,12 +8,15 @@ use Knp\Bundle\SnappyBundle\Snappy\Response\PdfResponse;
 
 use Dompdf\Dompdf;
 use Dompdf\Options;
+use App\Entity\Event;
+use Doctrine\ORM\EntityManagerInterface;
 
 class DevisMakerController extends AbstractController
 {
-    #[Route('/devis', name: 'app_devis_maker')]
-    public function index()
+    #[Route('/devis/{id}', name: 'app_devis_maker', methods: ['GET'])]
+    public function index($id,EntityManagerInterface $entityManager)
     {
+        $event = $entityManager->getRepository(Event::class)->find($id);
         // $html = $this->renderView('MyBundle:Foo:devis.html.twig', array(
         //     'some'  => 'test'
         // ));
@@ -32,7 +35,7 @@ class DevisMakerController extends AbstractController
 
         // Retrieve the HTML generated in our twig file
         $htmlContent = $this->renderView('devis_maker/body.html.twig', [
-            'devis' => "premier devis",
+            'event' => $event,
             'options' => ["options1", "options2", "options3"]
         ]);
 

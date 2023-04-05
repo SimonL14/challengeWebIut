@@ -2,75 +2,142 @@
 
 {% block content %}
 <style>
-		body {
-			font-family: Arial, sans-serif;
-			background-color: #f8f8f8;
-		}
+  /* Style pour le header */
+  #header {
+    text-align: right;
+    margin-bottom: 20px;
+  }
+  
+  #title {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  /* Style pour la description */
+  p {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  
+  /* Style pour le tableau */
+  #table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  /* Style pour les checkbox */
+  .checkbox {
+    width: 15px;
+    height: 15px;
+    border: 1px solid black;
+    margin: 0 auto;
+  }
+  
+  /* Style pour le footer */
+  #footer {
+    text-align: center;
+  }
+  
+  #footer p {
+    font-size: 14px;
+    margin: 0;
+  }
+  .signature-container {
+    display: flex;
+   flex-direction: row;
+}
+#signature-participant {
+  width: 200px;
+  height: 80px;
+  border: 2px solid black;
+  display: center;
+  margin: auto;
+}
 
-		h1 {
-			text-align: center;
-			color: #007bff;
-			margin-top: 20px;
-		}
-
-		table {
-			width: 100%;
-			margin: 20px auto;
-			border-collapse: collapse;
-			background-color: #fff;
-			box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-		}
-
-		th, td {
-			padding: 10px;
-			text-align: left;
-			border-bottom: 1px solid #ddd;
-		}
-
-		th {
-			background-color: #007bff;
-			color: #fff;
-		}
-
-		.total {
-			margin-top: 20px;
-			text-align: right;
-			font-weight: bold;
-			font-size: 18px;
-			color: #007bff;
-		}
-	</style>
-
-   <h1>Devis professionnel</h1>
-	<table>
-		<thead>
-			<tr>
-				<th>Description</th>
-				<th>Prix unitaire</th>
-				<th>Quantité</th>
-				<th>Total</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td>Conception et développement de site web</td>
-				<td>1500€</td>
-				<td>1</td>
-				<td>1500€</td>
-			</tr>
-			<tr>
-				<td>Hébergement et maintenance annuelle</td>
-				<td>500€</td>
-				<td>1</td>
-				<td>500€</td>
-			</tr>
-			<tr>
-				<td>Formation et support utilisateur</td>
-				<td>300€</td>
-				<td>2</td>
-				<td>600€</td>
-			</tr>
-		</tbody>
-	</table>
-	<div class="total">Total : 2600€</div>
+#signature-departement {
+  width: 200px;
+  height: 80px;
+  border: 2px solid black;
+  display: center;
+  margin: auto;
+  
+}
+.signature-canvas {
+  position: absolute;
+  bottom: 0;
+  border: 1px solid black;
+  display: center;
+}
+.signature-label {
+  text-align: center;
+  font-size: 18px;
+  margin-top: 5px;
+}
+</style>
+    <div id="header">
+      <p id="title">Devis de l'évenement : {{event.name}}</p>
+    </div>  
+    <p>Description : {{event.description}}</p>
+    <p id="date">Du {{event.Datedebut.format('d/m/Y')}} au {{event.Datefin.format('d/m/Y')}}</p>
+    <p>Département : Iut Calais</p> 
+   </br></br></br></br>
+	<table id="table">
+      <thead>
+        <tr>
+          <th>Menu</th>
+          <th>Validation</th>
+          <th>Quantité</th>
+          <th>Prix</br>(à renseigner)</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Entrée : {{event.entree}}</td>
+          <td><div class="checkbox"></div></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Plat : {{event.plat}}</td>
+          <td><div class="checkbox"></div></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Dessert : {{event.dessert}}</td>
+          <td><div class="checkbox"></div></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+	<center><p>Ce document est à rendre au département qui a créé l'événement pour pouvoir vous inscrire.</p><center>
+    <div id="signature-container">
+        <div id="signature-participant"></div>
+    <p class="signature-label">Signature du participant</p>
+    
+        <center><div id="signature-departement"></div>
+        <p class="signature-label">Signature du département</p></center>
+    </div>
+     <div id="footer">
+      <p>Tous droits réservés © 2023</p>
+    </div>
 {% endblock %}

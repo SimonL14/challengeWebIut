@@ -25,7 +25,7 @@
 				<ul>
 					{% if app.user %}
 						<li >
-							<p>Bienvenue {{app.user.firstname}} !</p>
+							<p>Bienvenue <a class="btn_nav_user" href="{{ path('app_account') }}">{{app.user.firstname}}</a>!</p>
 						</li>
 						<li>
 							<a href="{{ path('app_logout') }}"><i class="fa-solid fa-user-minus"></i><span> Déconnexion</span></a>

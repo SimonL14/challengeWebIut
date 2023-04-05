@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use Doctrine\ORM\EntityManagerInterface;
 use App\Entity\Event;
 use App\Form\EventType;
 use App\Repository\EventRepository;
@@ -13,6 +14,14 @@ use Symfony\Component\Routing\Annotation\Route;
 #[Route('/event')]
 class EventController extends AbstractController
 {
+
+    private $entityManager;
+
+    public function __construct(EntityManagerInterface $entityManager)
+    {
+        $this->entityManager = $entityManager;
+    }
+
     #[Route('/', name: 'app_event_index', methods: ['GET'])]
     public function index(EventRepository $eventRepository): Response
     {
@@ -74,5 +83,15 @@ class EventController extends AbstractController
         }
 
         return $this->redirectToRoute('app_home', [], Response::HTTP_SEE_OTHER);
+    }
+
+    #[Route('/{id}/register', name: 'app_event_register', methods: ['POST'])]
+    public function eventRegister(Request $request, Event $event): Response
+    {
+        $user = $this->getUser();
+        $user->addUserEvent($event);
+        $this->entityManager->flush();
+
+        return $this->redirectToRoute('app_event_show', ['id' => $event->getId()]);
     }
 }

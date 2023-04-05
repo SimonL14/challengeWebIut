@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20230327084258 extends AbstractMigration
+final class Version20230405120943 extends AbstractMigration
 {
     public function getDescription(): string
     {
@@ -20,14 +20,12 @@ final class Version20230327084258 extends AbstractMigration
     public function up(Schema $schema): void
     {
         // this up() migration is auto-generated, please modify it to your needs
-        $this->addSql('DROP TABLE departman');
-        $this->addSql('ALTER TABLE event ADD description LONGTEXT NOT NULL, ADD lieu VARCHAR(255) NOT NULL, ADD image VARCHAR(255) NOT NULL');
+        $this->addSql('ALTER TABLE event ADD entree VARCHAR(255) NOT NULL, ADD plat VARCHAR(255) NOT NULL, ADD dessert VARCHAR(255) NOT NULL, CHANGE image image VARCHAR(255) DEFAULT NULL');
     }
 
     public function down(Schema $schema): void
     {
         // this down() migration is auto-generated, please modify it to your needs
-        $this->addSql('CREATE TABLE departman (id INT AUTO_INCREMENT NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB COMMENT = \'\' ');
-        $this->addSql('ALTER TABLE event DROP description, DROP lieu, DROP image');
+        $this->addSql('ALTER TABLE event DROP entree, DROP plat, DROP dessert, CHANGE image image VARCHAR(255) NOT NULL');
     }
 }

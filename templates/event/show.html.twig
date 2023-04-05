@@ -94,7 +94,6 @@
 
 </div>
 
-
 <div class="detail_event">
     <div class="description">
         <h2>Description</h2>
@@ -102,7 +101,9 @@
         </div>
     <div class="menu">
         <h2>Menu</h2>
-        <p>Menu</p>
+        <p>Entrée : {{ event.entree }}</p>
+        <p>Plat : {{ event.plat }}</p>
+        <p>Dessert : {{ event.dessert }}</p>
     </div>
     <div class="prest_supp">
         <h2>Prestation supplémentaire</h2>
@@ -113,5 +114,17 @@
         <p>{{ event.lieu }}</p>
         <p>Map</p>
     </div>
+    {% if app.user %}
+        <form method="POST" action="{{ path('app_event_register', {'id': event.id}) }}">
+            <input type="hidden" name="user" id="idUser" value="{{ app.user.id }}"></input>
+            <input type="hidden" name="event" id="idEvent" value="{{ event.id }}"></input>
+            <button type="submit" class="btn">S'inscrire</button>
+        </form>
+
+        
+    {% else %}
+        <h3>connectez vous</h3>
+        <button type="submit" class="btn" disabled>S'inscrire</button>
+    {% endif %}
 </div>
 {% endblock %}
