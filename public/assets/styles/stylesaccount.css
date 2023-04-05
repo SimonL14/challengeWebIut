@@ -83,3 +83,17 @@
   border-radius: 10px;
   transition: 0.3s;
 }
+
+@media only screen and (max-width: 1024px) {
+  .my_acount_container {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+}
