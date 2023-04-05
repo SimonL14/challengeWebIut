@@ -7,8 +7,11 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\HttpFoundation\File\File;
 
 #[ORM\Entity(repositoryClass: EventRepository::class)]
+#[Vich\Uploadable]
 class Event
 {
     #[ORM\Id]
@@ -47,7 +50,10 @@ class Event
     #[ORM\Column(length: 255)]
     private ?string $lieu = null;
 
-    #[ORM\Column(length: 255)]
+    #[Vich\UploadableField(mapping: 'events', fileNameProperty: 'image')]
+    private ?File $imageFile = null;
+
+    #[ORM\Column(type: 'string', nullable: true, length: 255)]
     private ?string $image = null;
 
     #[ORM\Column(length: 255)]
@@ -238,6 +244,18 @@ class Event
     public function setLieu(string $lieu): self
     {
         $this->lieu = $lieu;
+
+        return $this;
+    }
+
+    public function getImageFile(): ?File
+    {
+        return $this->imageFile;
+    }
+
+    public function setImageFile(?File $imageFile): self
+    {
+        $this->imageFile = $imageFile;
 
         return $this;
     }

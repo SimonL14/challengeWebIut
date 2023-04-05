@@ -33,8 +33,12 @@ class EventType extends AbstractType
             ->add('lieu', null, [
                 'label' => 'Lieu',
             ])
-            ->add('image', FileType::class, [
-                'required' => true,
+            // ->add('image', FileType::class, [
+            //     'required' => true,
+            //     'label' => 'Sélection image'
+            // ])
+            ->add('imageFile', fileType::class, [
+                'required' => false,
                 'label' => 'Sélection image'
             ])
             ->add('Id_depart')

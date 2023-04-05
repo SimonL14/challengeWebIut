@@ -41,7 +41,7 @@
         {% if event|length != 0 %}
             {% for i in range(0, event|length - 1) %}
                 <div class="card_container">
-                    <img src="{{ asset('assets/img/2-IUT Calais_02-10-14_0457-scaled.jpg') }}" alt="">
+                    <img src="{{ vich_uploader_asset(event[i], 'imageFile') }}" alt="">
                     <div class="card_info">
                         <h2>{{event[i].Name}}</h2>
                         <div class="date_lieu_card">
