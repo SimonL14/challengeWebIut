@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20230405151736 extends AbstractMigration
+final class Version20230405164919 extends AbstractMigration
 {
     public function getDescription(): string
     {
@@ -22,7 +22,7 @@ final class Version20230405151736 extends AbstractMigration
         // this up() migration is auto-generated, please modify it to your needs
         $this->addSql('CREATE TABLE department (id INT AUTO_INCREMENT NOT NULL, id_school_id INT NOT NULL, name VARCHAR(255) NOT NULL, INDEX IDX_CD1DE18A431FFBC9 (id_school_id), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE devis (id INT AUTO_INCREMENT NOT NULL, id_user_id INT NOT NULL, id_event_id INT NOT NULL, accompagnant TINYINT(1) DEFAULT NULL, INDEX IDX_8B27C52B79F37AE5 (id_user_id), INDEX IDX_8B27C52B212C041E (id_event_id), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
-        $this->addSql('CREATE TABLE event (id INT AUTO_INCREMENT NOT NULL, id_depart_id INT NOT NULL, name VARCHAR(255) NOT NULL, date_debut DATE NOT NULL, date_fin DATE NOT NULL, description LONGTEXT NOT NULL, lieu VARCHAR(255) NOT NULL, image VARCHAR(255) DEFAULT NULL, entree VARCHAR(255) NOT NULL, plat VARCHAR(255) NOT NULL, dessert VARCHAR(255) NOT NULL, INDEX IDX_3BAE0AA72E37426C (id_depart_id), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
+        $this->addSql('CREATE TABLE event (id INT AUTO_INCREMENT NOT NULL, id_depart_id INT NOT NULL, name VARCHAR(255) NOT NULL, date_debut DATE NOT NULL, date_fin DATE NOT NULL, description LONGTEXT NOT NULL, lieu VARCHAR(255) NOT NULL, image VARCHAR(255) NOT NULL, entree VARCHAR(255) NOT NULL, plat VARCHAR(255) NOT NULL, dessert VARCHAR(255) NOT NULL, INDEX IDX_3BAE0AA72E37426C (id_depart_id), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE options (id INT AUTO_INCREMENT NOT NULL, id_event_id INT NOT NULL, category VARCHAR(255) DEFAULT NULL, name VARCHAR(255) NOT NULL, price DOUBLE PRECISION NOT NULL, date DATE NOT NULL, INDEX IDX_D035FA87212C041E (id_event_id), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE options_devis (options_id INT NOT NULL, devis_id INT NOT NULL, INDEX IDX_4A5278883ADB05F1 (options_id), INDEX IDX_4A52788841DEFADA (devis_id), PRIMARY KEY(options_id, devis_id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE school (id INT AUTO_INCREMENT NOT NULL, name VARCHAR(255) NOT NULL, address VARCHAR(255) NOT NULL, mail VARCHAR(255) NOT NULL, phone VARCHAR(255) NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');

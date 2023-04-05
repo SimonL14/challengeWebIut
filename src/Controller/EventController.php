@@ -2,8 +2,10 @@
 
 namespace App\Controller;
 
+use App\Entity\Department;
 use Doctrine\ORM\EntityManagerInterface;
 use App\Entity\Event;
+use App\Entity\School;
 use App\Form\EventType;
 use App\Repository\EventRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -50,10 +52,16 @@ class EventController extends AbstractController
     }
 
     #[Route('/{id}', name: 'app_event_show', methods: ['GET'])]
-    public function show(Event $event): Response
+    public function show(Event $event, EntityManagerInterface $entityManager): Response
     {
+        $departId = $event->getIdDepart();
+        $depart = $entityManager->getRepository(Department::class)->find($departId);
+        $schoolId = $depart->getIdSchool();
+        $school = $entityManager->getRepository(School::class)->find($schoolId);
         return $this->render('event/show.html.twig', [
             'event' => $event,
+            'department' => $depart,
+            'school' => $school
         ]);
     }
 

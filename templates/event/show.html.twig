@@ -43,6 +43,17 @@
         <p>Plat : {{ event.plat }}</p>
         <p>Dessert : {{ event.dessert }}</p>
     </div>
+    <div class="lieu">
+        <h2>Département</h2>
+        <p>{{ department.name }}</p>
+    </div>
+    <div class="lieu">
+        <h2>Ecole</h2>
+        <p>{{ school.name }}</p>
+        <p>{{ school.address }}</p>
+        <p>{{ school.mail }}</p>
+        <p>{{ school.phone }}</p>
+    </div>
     {% if app.user %}
         <form method="POST" action="{{ path('app_event_register', {'id': event.id}) }}">
             <input type="hidden" name="user" id="idUser" value="{{ app.user.id }}"></input>

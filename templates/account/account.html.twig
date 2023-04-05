@@ -64,21 +64,11 @@
                                     var element = document.querySelector(selector),
                                         truncated = element.innerText;
 
-<<<<<<< HEAD
                                     if (truncated.length > maxLength) {
                                         truncated = truncated.substr(0,maxLength) + '...';
                                     }
                                     return truncated;
                                 }
-=======
-{# {% for event in events %}
-    <p>{{ event.name }}</p>
-{% endfor %} #}
-
-
-
-
->>>>>>> 2fa2c74f542606e420eb5e9b6a0d34b624194219
 
                                 document.querySelector('.p_info_index').innerText = truncateText('.p_info_index', 300);
                             </script>
