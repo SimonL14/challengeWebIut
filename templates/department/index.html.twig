@@ -1,0 +1,80 @@
+{# {% extends 'base.html.twig' %}
+
+{% block title %}Department index{% endblock %}
+
+{% block body %}
+    <h1>Department index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for department in departments %}
+            <tr>
+                <td>{{ department.id }}</td>
+                <td>{{ department.Name }}</td>
+                <td>
+                    <a href="{{ path('app_department_show', {'id': department.id}) }}">show</a>
+                    <a href="{{ path('app_department_edit', {'id': department.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_department_new') }}">Create new</a>
+{% endblock %}
+ #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}User index{% endblock %}
+
+{% block body %}
+    <div class="user_body">
+        <h1 class="titre">Gestion des départements</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th class="user_th">Départements</th>
+                    <th class="delete_th">Suppression</th>
+                    {% if is_granted('ROLE_ADMIN') == true %}
+                        <th>Voir </th>
+                    {% endif %}
+                </tr>
+            </thead>
+            <tbody>
+            {% for department in departments %}
+                <tr class="user_row">
+                    <td class="user_name">{{ department.Name }}</td>
+                    {% if is_granted('ROLE_ADMIN') == true %}
+                    <td>
+                        {{ include('department/_delete_form.html.twig') }}
+                    </td>
+                    <td>
+                        <button class="adminButton" onclick="window.location.href='{{ path('app_department_show', {'id': department.id}) }}';">Show</button>
+                        <button class="adminButton" onclick="window.location.href='{{ path('app_department_edit', {'id': department.id}) }}';">Edit</button>
+                    </td>
+                {% endif %}
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="9">Aucun département</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    
+
+{% endblock %}

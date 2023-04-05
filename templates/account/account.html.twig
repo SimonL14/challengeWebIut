@@ -25,11 +25,21 @@
     
 
         {% if is_granted('ROLE_ADMIN') == true %}
-        <div class="admin_section entete">
-        <h2>Gestion du site</h2>
-            <a href="#" class="link_btn_account" >Créer un event</a>
-            <a href="#" class="link_btn_account" >Gérer les utilisateurs</a>
-           </div> 
+            <div class="admin_section entete">
+                <h2>Gestion du site</h2>
+                <div>
+                    <a href="{{path('app_event_new')}}" class="link_btn_account" >Créer un event</a>
+                    <a href="{{path('app_school_new')}}" class="link_btn_account" >Créer une école</a>
+                    <a href="{{path('app_department_new')}}" class="link_btn_account" >Créer un département</a>
+                </div>
+               
+               <div>
+                    <a href="{{path('app_user_index')}}" class="link_btn_account" >Gérer les utilisateurs</a>
+                    <a href="{{path('app_school_index')}}" class="link_btn_account" >Gérer les écoles</a>
+                    <a href="{{path('app_department_index')}}" class="link_btn_account" >Gérer les départements</a>
+               </div>
+                
+            </div> 
         {% endif %}
         
     
@@ -54,11 +64,21 @@
                                     var element = document.querySelector(selector),
                                         truncated = element.innerText;
 
+<<<<<<< HEAD
                                     if (truncated.length > maxLength) {
                                         truncated = truncated.substr(0,maxLength) + '...';
                                     }
                                     return truncated;
                                 }
+=======
+{# {% for event in events %}
+    <p>{{ event.name }}</p>
+{% endfor %} #}
+
+
+
+
+>>>>>>> 2fa2c74f542606e420eb5e9b6a0d34b624194219
 
                                 document.querySelector('.p_info_index').innerText = truncateText('.p_info_index', 300);
                             </script>

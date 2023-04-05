@@ -1,0 +1,94 @@
+{# {% extends 'base.html.twig' %}
+
+{% block title %}School index{% endblock %}
+
+{% block body %}
+    <h1>School index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Mail</th>
+                <th>Phone</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for school in schools %}
+            <tr>
+                <td>{{ school.id }}</td>
+                <td>{{ school.Name }}</td>
+                <td>{{ school.Address }}</td>
+                <td>{{ school.Mail }}</td>
+                <td>{{ school.Phone }}</td>
+                <td>
+                    <a href="{{ path('app_school_show', {'id': school.id}) }}">show</a>
+                    <a href="{{ path('app_school_edit', {'id': school.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_school_new') }}">Create new</a>
+{% endblock %} #}
+
+
+{% extends 'base.html.twig' %}
+
+{% block title %}École index{% endblock %}
+
+{% block body %}
+    <div class="user_body">
+        <h1 class="titre">Gestion des écoles</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th class="user_th">École</th>
+                    <th class="user_th">Address</th>
+                    <th class="user_th">Mail</th>
+                    <th class="user_th">Phone</th>
+                    <th class="delete_th">Suppression</th>
+                    <th class="user_th">actions</th>
+                    {% if is_granted('ROLE_ADMIN') == true %}
+                        <th>Actions </th>
+                    {% endif %}
+                </tr>
+            </thead>
+            <tbody>
+            {% for school in schools %}
+                <tr class="user_row">
+                    <td class="user_name">{{ school.Name }}</td>
+                    <td class="user_name">{{ school.Address }}</td>
+                    <td class="user_name">{{ school.Mail }}</td>
+                    <td class="user_name">{{ school.Phone }}</td>
+                    {% if is_granted('ROLE_ADMIN') == true %}
+                        <td>
+                            {{ include('school/_delete_form.html.twig') }}
+                        </td>
+                        <td>
+                            <button class="adminButton" onclick="window.location.href='{{ path('app_school_show', {'id': school.id}) }}';">Show</button>
+                            <button class="adminButton" onclick="window.location.href='{{ path('app_school_edit', {'id': school.id}) }}';">Edit</button>
+
+                        </td>
+                </tr>
+                {% endif %} 
+            {% else %}
+                <tr>
+                    <td colspan="9">Aucune école</td>
+                </tr>   
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    
+
+{% endblock %}

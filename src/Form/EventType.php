@@ -20,7 +20,6 @@ class EventType extends AbstractType
             ->add('Name', null, [
                 'label' => 'Nom de l\'événement',
             ])
-            ->add('Creator')
             ->add('Date_debut', null, [
                 'label' => 'Date de début',
             ], DateType::class)
