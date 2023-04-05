@@ -44,7 +44,7 @@ class EventType extends AbstractType
             ->add('entree')
             ->add('plat')
             ->add('dessert', null, [
-                'label' => 'Département',
+                'label' => 'dessert',
             ]);
     }
 
