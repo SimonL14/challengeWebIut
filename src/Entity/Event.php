@@ -51,7 +51,7 @@ class Event
     #[Vich\UploadableField(mapping: 'events', fileNameProperty: 'image')]
     private ?File $imageFile = null;
 
-    #[ORM\Column(type: 'string', nullable: true, length: 255)]
+    #[ORM\Column(type: 'string', nullable: false, length: 255)]
     private ?string $image = null;
 
     #[ORM\Column(length: 255)]
@@ -252,7 +252,7 @@ class Event
         return $this->image;
     }
 
-    public function setImage(string $image): self
+    public function setImage(?string $image): self
     {
         $this->image = $image;
 
