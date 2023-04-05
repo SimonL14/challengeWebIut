@@ -18,6 +18,7 @@ footer{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
 }
 .footer img{
     padding: 10px;
@@ -30,12 +31,16 @@ footer{
     flex-direction: column;
     justify-content: center;
     width: fit-content;
-    color: var(--primary-blue);
 }
 .listtext a{
   border-left: 20px;
   border-right: 20px;
-    cursor: pointer;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--primary-blue);
+}
+.listtext a:hover{
+    text-decoration: underline;
 }
 .social-icons{
     display: flex;
@@ -44,6 +49,7 @@ footer{
 }
 .social-icons a{
     padding: 10px;
+    color: var(--primary-blue);
 }
 
 @media only screen and (max-width: 1024px) {
