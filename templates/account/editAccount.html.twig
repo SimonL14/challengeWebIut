@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+			<link rel="stylesheet" href="{{ asset('assets/styles/stylesaccount.css') }}">
+            <link rel="stylesheet" href="{{ asset('assets/styles/styles.css') }}">
+			<link rel="stylesheet" href="{{ asset('assets/styles/stylesfooter.css') }}">
+{% endblock %}
+
+{% block title %}Modification du profil de {{app.user.firstname}} {{app.user.lastname}}{% endblock %}
+{% block body %}
+<div class="navigation_page">
+    <a class="lien" href="{{ path('app_home') }}">Accueil</a> > <a> Mon compte </a> > <a> Modification du profil </a>
+</div> 
+<div class="my_acount_container">
+    <div class="entete">
+
+        {{ form_start(form) }}
+            <div class="form_group_edit_user">
+                <p>{{form_row(form.Firstname)}}</p>
+                <p>{{form_row(form.Lastname)}}</p>
+                <p>{{form_row(form.email)}}</p>
+                <p>{{form_row(form.Telephone)}}</p>
+            </div>
+        {{ form_end(form) }}
+
+    </div>      
+    
+</div>
+
+
+
+
+
+{% endblock %}

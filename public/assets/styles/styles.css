@@ -279,12 +279,8 @@ select {
   color: var(--white);
   flex-direction: row;
   margin-bottom: 2rem;
-  transition: 0.3s;
 }
-.card_container:hover {
-  background-color: var(--hover-blue);
-  transition: 0.3s;
-}
+
 .card_container img {
   width: 300px;
   padding: 2rem;
@@ -402,6 +398,50 @@ select {
   border-radius: 10px;
 }
 
+.form_group_edit_user {
+  color: var(--white);
+}
+
+.user_edit_input {
+  color: var(--primary-blue);
+  display: flex;
+  flex-direction: column;
+}
+
+.user_edit_btn {
+  background-color: var(--white);
+  border: 1px solid var(--white);
+  color: var(--primary-blue);
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 10px;
+  align-content: center;
+  justify-content: center;
+  margin: 0 auto;
+  display: block;
+}
+
+.user_edit_btn:hover {
+  background-color: var(--primary-blue);
+  color: var(--white);
+  border: 1px solid var(--white);
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.my_acount_container {
+  padding: 2rem;
+}
+
+.my_acount_container .entete {
+  border-radius: 10px;
+}
+
 @media only screen and (max-width: 1024px) {
   .next_event_container {
     display: block;
@@ -506,5 +546,9 @@ select {
 
   .quatrecentquatre img {
     display: none;
+  }
+
+  .my_acount_container .entete {
+    border-radius: 10px;
   }
 }
