@@ -1,0 +1,15 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Page non trouvée{% endblock %}
+
+{% block body %}
+    <div class="quatrecentquatre">
+        <div class="ohnon">
+            <h1> 500 - Nooooon! Petit problème de serveur.. </h1>
+            <p class="linkerror"><a href="{{ path('app_home') }}">Page d'accueil</a></p>
+        </div>
+        <img src="https://cdn.dribbble.com/users/19381/screenshots/3471308/dribbble-500-animated.gif" >
+        
+    </div>
+<br>
+{% endblock %}

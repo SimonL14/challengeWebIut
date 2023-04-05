@@ -364,11 +364,38 @@ select {
   padding: 1rem;
 }
 
+.quatrecentquatre {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  color: #15202b;
+  padding: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.linkerror {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.linkerror a {
+  color: #15202b;
+  text-decoration: none;
+  border: 1px solid #15202b;
+  padding: 10px;
+  border-radius: 10px;
+}
+
 @media only screen and (max-width: 1024px) {
   .next_event_container {
     display: block;
     margin: 0 auto;
     margin-bottom: 5rem;
+  }
+
+  .quatrecentquatre {
+    padding: 2rem;
   }
 }
 
@@ -456,5 +483,13 @@ select {
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+  }
+
+  .quatrecentquatre {
+    padding: 2rem;
+  }
+
+  .quatrecentquatre img {
+    display: none;
   }
 }

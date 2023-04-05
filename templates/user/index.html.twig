@@ -25,10 +25,8 @@
                         {{ include('user/_delete_form.html.twig') }}
                     </td>
                     {% if is_granted('ROLE_ADMIN') == true %}
-                <td>
-                    <button class="adminButton" onclick="window.location.href='{{ path('app_user_show', {'id': user.id}) }}';">Show</button>
-                    <button class="adminButton" onclick="window.location.href='{{ path('app_user_edit', {'id': user.id}) }}';">Edit</button>
-                </td>
+                        <a href="#">Créer un event</a>
+                        <a href="#">Gérer les utilisateurs</a>
                 {% endif %}
                 </tr>
             {% else %}
