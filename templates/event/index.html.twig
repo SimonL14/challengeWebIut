@@ -10,7 +10,6 @@
             <tr>
                 <th>Id</th>
                 <th>Name</th>
-                <th>Creator</th>
                 <th>Date_debut</th>
                 <th>Date_fin</th>
                 <th>Description</th>
@@ -24,7 +23,6 @@
             <tr>
                 <td>{{ event.id }}</td>
                 <td>{{ event.Name }}</td>
-                <td>{{ event.Creator }}</td>
                 <td>{{ event.DateDebut ? event.DateDebut|date('Y-m-d') : '' }}</td>
                 <td>{{ event.DateFin ? event.DateFin|date('Y-m-d') : '' }}</td>
                 <td>{{ event.description }}</td>
