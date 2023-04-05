@@ -1,0 +1,47 @@
+.new_event_div form[name="event"],
+.new_school_div form[name="school"],
+.new_department_div form[name="department"] {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.new_event_div form[name="event"] div#event > div,
+form[name="school"] div#school > div,
+form[name="department"] div#department > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.new_event_div form[name="event"] .btn_create,
+form[name="school"] .btn,
+form[name="department"] .btn,
+.backEdit,
+.btn_delete_user {
+  background-color: var(--primary-blue);
+  border: 1px solid var(--primary-blue);
+  color: var(--white);
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 0 auto;
+  cursor: pointer;
+  border-radius: 10px;
+  display: block;
+  width: fit-content;
+  margin-bottom: 2rem;
+}
+
+.new_event_div form[name="event"] .btn_create:hover,
+form[name="school"] .btn:hover,
+form[name="department"] .btn:hover,
+.backEdit:hover,
+.btn_delete_user:hover {
+  background-color: var(--white);
+  border: 1px solid var(--primary-blue);
+  color: var(--primary-blue);
+}

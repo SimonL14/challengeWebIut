@@ -1,13 +1,18 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Edit School{% endblock %}
-
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('assets/styles/styles.css') }}">
+	<link rel="stylesheet" href="{{ asset('assets/styles/stylesDetailsEvent.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/styles/stylesFooter.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/styles/stylesCreate.css') }}">
+{% endblock %}
 {% block body %}
     <h1>Edit School</h1>
 
     {{ include('school/_form.html.twig', {'button_label': 'Update'}) }}
 
-    <a href="{{ path('app_school_index') }}">back to list</a>
+    <a class="backEdit" href="{{ path('app_school_index') }}">back to list</a>
 
     {{ include('school/_delete_form.html.twig') }}
 {% endblock %}
