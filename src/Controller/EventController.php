@@ -89,7 +89,7 @@ class EventController extends AbstractController
         if ($this->isCsrfTokenValid('delete' . $event->getId(), $request->request->get('_token'))) {
             $eventRepository->remove($event, true);
         }
-
+        //return to home
         return $this->redirectToRoute('app_home', [], Response::HTTP_SEE_OTHER);
     }
 

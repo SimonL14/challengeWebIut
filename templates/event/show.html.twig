@@ -1,66 +1,3 @@
-{# {% extends 'base.html.twig' %}
-
-{% block title %}Event{% endblock %}
-
-{% block body %}
-    <h1>Event</h1>
-
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ event.id }}</td>
-            </tr>
-            <tr>
-                <th>Name</th>
-                <td>{{ event.Name }}</td>
-            </tr>
-            <tr>
-                <th>Creator</th>
-                <td>{{ event.Creator }}</td>
-            </tr>
-            <tr>
-                <th>Date_debut</th>
-                <td>{{ event.DateDebut ? event.DateDebut|date('Y-m-d') : '' }}</td>
-            </tr>
-            <tr>
-                <th>Date_fin</th>
-                <td>{{ event.DateFin ? event.DateFin|date('Y-m-d') : '' }}</td>
-            </tr>
-            <tr>
-                <th>Description</th>
-                <td>{{ event.description }}</td>
-            </tr>
-            <tr>
-                <th>Lieu</th>
-                <td>{{ event.lieu }}</td>
-            </tr>
-            <tr>
-                <th>Image</th>
-                <td>{{ event.image }}</td>
-            </tr>
-            <tr>
-                <th>Entrée</th>
-                <td>{{ event.entree }}</td>
-            </tr>
-            <tr>
-                <th>Plat</th>
-                <td>{{ event.plat }}</td>
-            </tr>
-            <tr>
-                <th>Dessert</th>
-                <td>{{ event.dessert }}</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <a href="{{ path('app_home') }}">back to list</a>
-
-    <a href="{{ path('app_event_edit', {'id': event.id}) }}">edit</a>
-
-    {{ include('event/_delete_form.html.twig') }}
-{% endblock %} #}
-
 {% extends 'base.html.twig' %}
 
 {% block stylesheets %}
@@ -104,15 +41,6 @@
         <h2>Menu</h2>
         <p>Menu</p>
     </div>
-    <div class="prest_supp">
-        <h2>Prestation supplémentaire</h2>
-        <p>Préstation supp</p> 
-    </div>
-    <div class="lieu">
-        <h2>Lieu</h2>
-        <p>{{ event.lieu }}</p>
-        <p>Map</p>
-    </div>
     <div class="lieu">
         <h2>Département</h2>
         <p>{{ department.name }}</p>
@@ -128,13 +56,18 @@
         <form method="POST" action="{{ path('app_event_register', {'id': event.id}) }}">
             <input type="hidden" name="user" id="idUser" value="{{ app.user.id }}"></input>
             <input type="hidden" name="event" id="idEvent" value="{{ event.id }}"></input>
-            <button type="submit" class="btn">S'inscrire</button>
-        </form>
-
-        
+            <button type="submit" class="btn moreInfoButton_button">S'inscrire à l'évenement</button>
+        </form>   
     {% else %}
-        <h3>connectez vous</h3>
-        <button type="submit" class="btn" disabled>S'inscrire</button>
+        <h3>Connectez-vous</h3>
+        <a type="submit" class="btn moreInfoButton" disabled>Créer un compte</a>
+    {% endif %}
+    {% if is_granted('ROLE_ADMIN') == true %}
+        {# <a href="{{path('_delete_form.html.twig', {'id': event.id})}}" class="moreInfoButton_button_delete" >Supprimer l'évenement</a>
+    <input type="text"> #}
+
+        {{ include('event/_delete_form.html.twig') }}
+
     {% endif %}
 </div>
 {% endblock %}

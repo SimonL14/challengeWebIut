@@ -439,6 +439,62 @@ select {
   margin: 2rem;
 }
 
+.moreInfoButton_button {
+  background-color: var(--white);
+  border: 1px solid var(--primary-blue);
+  color: var(--primary-blue);
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 10px;
+  align-content: center;
+  justify-content: center;
+  margin: 0 auto;
+  display: block;
+}
+
+.moreInfoButton_button:hover {
+  background-color: var(--primary-blue);
+  color: var(--white);
+  border: 1px solid var(--white);
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.moreInfoButton_button_delete {
+  background-color: var(--red);
+  border: 1px solid var(--white);
+  color: var(--white);
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 10px;
+  align-content: center;
+  justify-content: center;
+  margin: 0 auto;
+  display: block;
+}
+
+.moreInfoButton_button_delete:hover {
+  background-color: var(--white);
+  color: var(--red);
+  border: 1px solid var(--red);
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.btn_create {
+  background-color: red;
+}
+
 @media only screen and (max-width: 1024px) {
   .next_event_container {
     display: block;
