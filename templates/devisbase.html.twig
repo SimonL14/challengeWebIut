@@ -14,42 +14,43 @@
 			<link rel="stylesheet" href="{{ asset('assets/styles/stylesfooter.css') }}">
 			<link rel="stylesheet" href="{{ asset('assets/styles/stylesdevis.css') }}">
 		{% endblock %}
+<style>
+            /** Define the margins of your page **/
+            @page {
+                margin: 100px 25px;
+            }
 
+
+
+            footer {
+                position: fixed; 
+                bottom: -6000000000000000px; 
+                size: 0.8px; 
+
+                /** Extra personal styles **/
+                background-color: #03a9f4;
+                color: white;
+                text-align: center;
+                line-height: 35px;
+            }
+        </style>
 	</head>
 	
 	<body>
 		<!-- Navbar -->
 		<nav class="nav">
-			<a href="{{ path('app_home') }}"><img  src="{{ asset('assets/img/logo_iut.png') }}" alt="logo des iut" class="logo_nav"></a>
-			<div class="link_nav">
-				<ul>
-					{% if app.user %}
-						<li >
-							<p>Bienvenue {{app.user.firstname}} !</p>
-						</li>
-						<li>
-							<a href="{{ path('app_logout') }}"><i class="fa-solid fa-user-minus"></i><span> Déconnexion</span></a>
-						</li>
-					{% else %}
-						<li>
-                			<a href="{{ path('app_login') }}"><i class="fa-solid fa-user"></i><span>Se connecter</span></a>
-              			</li>
-						<li>
-							<a href="{{ path('app_register') }}"><i class="fa-solid fa-user-plus"></i><span>S'inscrire</span></a>
-						</li>
-					{% endif %}
-				</ul>
-			</div>
-				
+			
 		</nav><!-- Fin de la navbar -->		
 	
 
 {% block body %}
+{% block content %}
+{% endblock %}
 {% endblock %}
 
 <footer>
 
-	<div class="footer">
+     <div class="container">
 		<a href="{{ path('app_home') }}"><img  src="{{ asset('assets/img/logo_iut.png') }}" alt="logo des iut" class="logo_nav"></a>
 		<div class="listtext">
 			<a href="{{ path('app_home') }}">Accueil</a>
@@ -69,7 +70,7 @@
 			<a href="#" class="btn_contact">Contactez-nous</a>
 		</div>
 		
-	</div>
+	
 </footer>
 
 </body>
