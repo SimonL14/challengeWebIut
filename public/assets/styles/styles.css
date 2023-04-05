@@ -63,6 +63,21 @@ nav .link_nav ul li a {
   color: var(--white);
 }
 
+nav .link_nav ul li a.btn_nav_user {
+  border: none;
+  background-color: unset;
+  text-decoration: underline;
+  padding: unset;
+  color: var(--primary-blue);
+}
+
+nav .link_nav ul li a.btn_nav_user:hover {
+  border: none;
+  background-color: unset;
+  text-decoration: underline;
+  padding: unset;
+}
+
 nav .link_nav ul li a:hover {
   transition: 0.3s;
   border: 1px solid var(--primary-blue);

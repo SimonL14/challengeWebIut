@@ -3,7 +3,6 @@
 			<link rel="stylesheet" href="{{ asset('assets/styles/stylesaccount.css') }}">
             <link rel="stylesheet" href="{{ asset('assets/styles/styles.css') }}">
 			<link rel="stylesheet" href="{{ asset('assets/styles/stylesfooter.css') }}">
-            <link rel="stylesheet" href="{{ asset('assets/styles/stylesaccount2.css') }}">
 {% endblock %}
 
 
@@ -11,18 +10,32 @@
 <div class="navigation_page">
     <a class="lien" href="{{ path('app_home') }}">Accueil</a> > <a> Mon compte </a>
 </div> 
+<div class="my_acount_container">
+    <div class="entete">
+        <p><i class="fa fa-user"></i> {{app.user.firstname}} {{app.user.lastname}}</p>
+        <p><i class="fa fa-envelope"></i> {{app.user.email}}</p>
+        <p><i class="fa fa-phone"></i> {{app.user.telephone}}</p>
 
-<div class="entete">
-    <p><i class="fa fa-user"></i> {{app.user.firstname}} {{app.user.lastname}}</p>
-    <p><i class="fa fa-envelope"></i> {{app.user.email}}</p>
-    <p><i class="fa fa-phone"></i> {{app.user.telephone}}</p>
+        {% if app.user.roles == []  %}
+            <p><i class="fa fa-phone "></i> User</p>
+        {% endif %}
+        <a href="#" class="link_btn_account" > Modifier mes informations <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
 
-    {% if app.user.roles == []  %}
-        <p><i class="fa fa-phone "></i> User</p>
-    {% endif %}
-    <a href="#" class="modifbutton" > Modifier mes informations <i class="fa-solid fa-arrow-right"></i></a>
+    
+
+        {% if is_granted('ROLE_ADMIN') == true %}
+        <div class="admin_section entete">
+        <h2>Gestion du site</h2>
+            <a href="#" class="link_btn_account" >Créer un event</a>
+            <a href="#" class="link_btn_account" >Gérer les utilisateurs</a>
+           </div> 
+        {% endif %}
+        
+    
 </div>
-<br>
+
+
 
 
 

@@ -38,3 +38,48 @@
   font-size: 24px;
   color: #fff;
 }
+
+.my_acount_container {
+  display: flex;
+  padding: 2rem;
+}
+
+.admin_section {
+  align-items: center;
+  justify-content: center;
+}
+
+.admin_section h2 {
+  color: white;
+  text-align: center;
+}
+
+.my_acount_container {
+  display: flex;
+  padding: 2rem;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.link_btn_account {
+  background-color: var(--white);
+  border: none;
+  color: var(--primary-blue);
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.link_btn_account:hover {
+  background-color: var(--primary-blue);
+  color: var(--white);
+  border: 1px solid var(--white);
+  border-radius: 10px;
+  transition: 0.3s;
+}
