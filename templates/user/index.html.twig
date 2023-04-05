@@ -5,15 +5,13 @@
 {% block body %}
     <div class="user_body">
         <h1 class="titre">Gestion des utilisateurs</h1>
-        <input class="searchBar" type="text" placeholder="Nom utilisateur"></input>
-
         <table class="table">
             <thead>
                 <tr>
                     <th class="user_th">Utilisateur</th>
                     <th class="delete_th">Suppression</th>
                     {% if is_granted('ROLE_ADMIN') == true %}
-                    <th>Voir </th>
+                        <th>Voir </th>
                     {% endif %}
                 </tr>
             </thead>

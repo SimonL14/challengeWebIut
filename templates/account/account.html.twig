@@ -26,11 +26,19 @@
 
         {% if is_granted('ROLE_ADMIN') == true %}
             <div class="admin_section entete">
-            <h2>Gestion du site</h2>
-                <a href="{{path('app_event_new')}}" class="link_btn_account" >Créer un event</a>
-                <a href="{{path('app_user_index')}}" class="link_btn_account" >Gérer les utilisateurs</a>
-                <a href="{{path('app_school_new')}}" class="link_btn_account" >Créer une école</a>
-                <a href="{{path('app_department_new')}}" class="link_btn_account" >Créer un département</a>
+                <h2>Gestion du site</h2>
+                <div>
+                    <a href="{{path('app_event_new')}}" class="link_btn_account" >Créer un event</a>
+                    <a href="{{path('app_school_new')}}" class="link_btn_account" >Créer une école</a>
+                    <a href="{{path('app_department_new')}}" class="link_btn_account" >Créer un département</a>
+                </div>
+               
+               <div>
+                    <a href="{{path('app_user_index')}}" class="link_btn_account" >Gérer les utilisateurs</a>
+                    <a href="{{path('app_school_index')}}" class="link_btn_account" >Gérer les écoles</a>
+                    <a href="{{path('app_department_index')}}" class="link_btn_account" >Gérer les départements</a>
+               </div>
+                
             </div> 
         {% endif %}
         
