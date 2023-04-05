@@ -5,6 +5,8 @@
 {% block body %}
     <div class="user_body">
         <h1 class="titre">Gestion des utilisateurs</h1>
+        <input class="searchBar" type="text" placeholder="Nom utilisateur"></input>
+
         <table class="table">
             <thead>
                 <tr>
@@ -24,7 +26,9 @@
                         {{ include('user/_delete_form.html.twig') }}
                     </td>
                     <td>
-                        <button class="adminButton" onclick="window.location.href='{{ path('app_user_show', {'id': user.id}) }}';">Voir</button>
+                        <button class="adminButton" onclick="window.location.href='{{ path('app_user_show', {'id': user.id}) }}';">Show</button>
+                        <button class="adminButton" onclick="window.location.href='{{ path('app_user_edit', {'id': user.id}) }}';">Edit</button>
+
                     </td>
                 {% endif %}
                 </tr>

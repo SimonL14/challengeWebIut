@@ -154,10 +154,11 @@ select {
 }
 
 /*Register Desktop*/
-.boxlogin button {
+.boxlogin_button {
   text-decoration: none;
   color: var(--primary-blue);
   background-color: var(--white);
+  border: 1px solid var(--primary-blue);
   padding: 1rem;
   width: fit-content;
   border-radius: 10px;
@@ -165,9 +166,10 @@ select {
   font-family: "Nunito Sans", sans-serif;
   margin-left: auto;
   margin-right: auto;
+  margin: 1rem;
 }
 
-.boxlogin button:hover {
+.boxlogin_button:hover {
   text-decoration: none;
   background-color: var(--primary-blue);
   border: 1px solid var(--white);
@@ -440,6 +442,11 @@ select {
 
 .my_acount_container .entete {
   border-radius: 10px;
+}
+
+.login_no_account {
+  text-align: center;
+  margin: 2rem;
 }
 
 @media only screen and (max-width: 1024px) {

@@ -22,8 +22,6 @@ class Event
     #[ORM\Column(length: 255)]
     private ?string $Name = null;
 
-    #[ORM\Column]
-    private ?int $Creator = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
     private ?\DateTimeInterface $Date_debut = null;
@@ -89,17 +87,6 @@ class Event
         return $this;
     }
 
-    public function getCreator(): ?int
-    {
-        return $this->Creator;
-    }
-
-    public function setCreator(int $Creator): self
-    {
-        $this->Creator = $Creator;
-
-        return $this;
-    }
 
     public function getDateDebut(): ?\DateTimeInterface
     {
@@ -306,5 +293,10 @@ class Event
         $this->dessert = $dessert;
 
         return $this;
+    }
+
+    public function __toString()
+    {
+        return $this->Name; // Remplacer champ par une propriété "string" de l'entité
     }
 }
