@@ -266,7 +266,7 @@ select {
   margin-bottom: 2rem;
   transition: 0.3s;
 }
-.card_container:hover{
+.card_container:hover {
   background-color: var(--hover-blue);
   transition: 0.3s;
 }
